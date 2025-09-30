@@ -27,6 +27,7 @@
             transition: max-height 0.35s ease, opacity 0.35s ease, transform 0.35s ease;
             pointer-events: none;
         }
+
         .reveal.open {
             max-height: 1000px;
             opacity: 1;
@@ -35,11 +36,35 @@
         }
 
         /* Melhora visual do card clicável */
-        .card-clickable { cursor: pointer; }
-        .card-clickable:hover { transform: translateY(-4px); transition: transform .2s ease; }
+        .card-clickable {
+            cursor: pointer;
+        }
+
+        .card-clickable:hover {
+            transform: translateY(-4px);
+            transition: transform .2s ease;
+        }
     </style>
 </head>
 <body>
+
+<!-- Barra de navegação -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">Brisa & Aroma</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link active" href="index.html">Início</a></li>
+                <li class="nav-item"><a class="nav-link" href="servicos.html">Serviços</a></li>
+                <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
 
 <!-- Hero Section -->
 <section class="container mt-5 py-5 text-center" data-aos="zoom-in">
@@ -184,7 +209,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
-    AOS.init({ duration: 400, easing: 'ease-out', once: true, offset: 80, delay: 0 });
+    AOS.init({duration: 400, easing: 'ease-out', once: true, offset: 80, delay: 0});
 
     function toggleCard(event, id) {
         const clickedEl = event.target;
@@ -201,12 +226,15 @@
         event.stopPropagation();
         const numero = "554196473945";
         const texto = document.getElementById("evento").value;
-        if (!texto) { alert("Por favor, escreva sua ideia antes de enviar."); return; }
+        if (!texto) {
+            alert("Por favor, escreva sua ideia antes de enviar.");
+            return;
+        }
         const url = `https://api.whatsapp.com/send?phone=${numero}&text=${encodeURIComponent("Minha ideia para o evento: " + texto)}`;
         window.open(url, "_blank");
     }
 
-    document.addEventListener('click', function(e){
+    document.addEventListener('click', function (e) {
         if (!e.target.closest('.card-clickable')) {
             document.querySelectorAll('.reveal').forEach(r => r.classList.remove('open'));
         }
