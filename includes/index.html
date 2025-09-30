@@ -1,18 +1,40 @@
-<?php include 'includes/header.php'; ?>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Página Inicial - Brisa & Aroma</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <!-- Bootstrap Bootswatch Theme -->
+    <link href="https://bootswatch.com/5/sketchy/bootstrap.min.css" rel="stylesheet">
+
+    <!-- CSS do AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- CSS personalizado -->
+    <link rel="stylesheet" href="static/css/style.css">
+
+    <!-- Ícones Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Header / Hero -->
 <header class="d-flex flex-column align-items-center text-center"
-        style="background: url('img/marca.jpg') no-repeat center center;
+        style="background: url('static/img/marca.jpg') no-repeat center center;
                background-size: cover;
                height: 550px;
                color: #fff;
                padding-top: 400px;">
-    <a href="#" class="btn btn-warning btn-lg mt-3">Solicitar Evento</a>
+    <a href="#orcamento" class="btn btn-warning btn-lg mt-3">Solicitar Evento</a>
 </header>
 
-<section class="py-5" style="background-color: var(--cor-fundo);">
+<!-- Nossa História -->
+<section class="py-5" style="background-color: #f6f6f6;">
     <div class="container">
         <h2 class="text-center mb-5 titulo-historia" data-aos="fade-up">Nossa História</h2>
 
+        <!-- História 1 -->
         <div class="row align-items-center mb-5">
             <div class="col-md-6">
                 <div class="text-box">
@@ -21,12 +43,12 @@
                     <p>Foi então que <strong>os salgados e massas que eu já sabia preparar</strong> passaram a ganhar espaço — e percebeu que poderia ser uma boa forma de ter uma renda extra para cuidar do seu lar.</p>
                 </div>
             </div>
-
             <div class="col-md-6 text-center" data-aos="fade-up">
-                <img src="img/origem.jpg" alt="Origem" class="img-fluid rounded shadow" style="width: 530px; height: auto; border-radius: 10px;">
+                <img src="static/img/origem.jpg" alt="Origem" class="img-fluid rounded shadow" style="width: 530px; height: auto; border-radius: 10px;">
             </div>
         </div>
 
+        <!-- História 2 -->
         <div class="row align-items-center mb-5 flex-md-row-reverse">
             <div class="col-md-6">
                 <div class="text-box">
@@ -38,11 +60,11 @@
                 </div>
             </div>
             <div class="col-md-6 text-center" data-aos="fade-up">
-                <img src="img/menu-personalizado.jpg" alt="Massas caseiras" class="img-fluid rounded shadow" style="width: 530px; height: auto; border-radius: 10px;">
+                <img src="static/img/menu-personalizado.jpg" alt="Massas caseiras" class="img-fluid rounded shadow" style="width: 530px; height: auto; border-radius: 10px;">
             </div>
         </div>
 
-        <!-- repetições adaptadas -->
+        <!-- História 3 -->
         <div class="row align-items-center mb-5">
             <div class="col-md-6">
                 <div class="text-box">
@@ -52,10 +74,11 @@
                 </div>
             </div>
             <div class="col-md-6 text-center" data-aos="fade-up">
-                <img src="img/historia3.jpg" alt="Vó Sirlei" class="img-fluid rounded shadow" style="width: 530px; height: auto; border-radius: 10px;">
+                <img src="static/img/historia3.jpg" alt="Vó Sirlei" class="img-fluid rounded shadow" style="width: 530px; height: auto; border-radius: 10px;">
             </div>
         </div>
 
+        <!-- História 4 -->
         <div class="row align-items-center mb-5 flex-md-row-reverse">
             <div class="col-md-6">
                 <div class="text-box">
@@ -65,11 +88,11 @@
                 </div>
             </div>
             <div class="col-md-6 text-center" data-aos="fade-up">
-                <img src="img/historia4.jpg" alt="Macarrão caseiro" class="img-fluid rounded shadow" style="width: 530px; height: auto; border-radius: 10px;">
+                <img src="static/img/historia4.jpg" alt="Macarrão caseiro" class="img-fluid rounded shadow" style="width: 530px; height: auto; border-radius: 10px;">
             </div>
         </div>
 
-        <!-- demais blocos seguem o mesmo padrão -->
+        <!-- História 5 -->
         <div class="row align-items-center mb-5">
             <div class="col-md-6">
                 <div class="text-box">
@@ -79,10 +102,11 @@
                 </div>
             </div>
             <div class="col-md-6 text-center" data-aos="fade-up">
-                <img src="img/historia5.jpg" alt="Amor na cozinha" class="img-fluid rounded shadow" style="width: 530px; height: auto; border-radius: 10px;">
+                <img src="static/img/historia5.jpg" alt="Amor na cozinha" class="img-fluid rounded shadow" style="width: 530px; height: auto; border-radius: 10px;">
             </div>
         </div>
 
+        <!-- História 6 -->
         <div class="row align-items-center mb-5 flex-md-row-reverse">
             <div class="col-md-6">
                 <div class="text-box">
@@ -91,10 +115,11 @@
                 </div>
             </div>
             <div class="col-md-6 text-center" data-aos="fade-up">
-                <img src="img/historia6.jpg" alt="Culinária criativa" class="img-fluid rounded shadow" style="width: 530px; height: auto; border-radius: 10px;">
+                <img src="static/img/historia6.jpg" alt="Culinária criativa" class="img-fluid rounded shadow" style="width: 530px; height: auto; border-radius: 10px;">
             </div>
         </div>
 
+        <!-- Conclusão -->
         <div class="row align-items-center">
             <div class="col-md-12 text-center" data-aos="fade-up">
                 <div class="text-box">
@@ -111,38 +136,49 @@
     </div>
 </section>
 
-<section class="py-5" style="background-color: var(--cor-fundo);">
+<!-- Nossos Serviços -->
+<section class="py-5" style="background-color: #f6f6f6;">
     <div class="container">
         <h2 class="text-center mb-4">Nossos Serviços</h2>
         <div class="row">
+
             <div class="col-md-4 text-center">
-                <div class="card text-dark">
+                <div class="card text-dark mb-4">
                     <div class="card-body">
-                        <a href="chef.php"><h4>Chef Sob Medida</h4></a>
+                        <a href="chef.html"><h4>Chef Sob Medida</h4></a>
                         <p>Magia na panela: <br>Transformamos mesas em pontos de encontro e pratos em histórias para contar.</p>
                     </div>
                 </div>
             </div>
 
             <div class="col-md-4 text-center">
-                <div class="card text-dark">
+                <div class="card text-dark mb-4">
                     <div class="card-body">
-                        <a href="cardapio.php"><h4>A Gente Faz o Cardápio que Você Sonhar</h4></a>
+                        <a href="cardapio.html"><h4>A Gente Faz o Cardápio que Você Sonhar</h4></a>
                         <p>Do jeitinho que você gosta: <br> Sabores que abraçam, temperos que contam histórias e pratos que deixam o coração quentinho.</p>
                     </div>
                 </div>
             </div>
 
             <div class="col-md-4 text-center">
-                <div class="card text-dark">
+                <div class="card text-dark mb-4">
                     <div class="card-body">
-                        <a href="harmonizacao.php"><h4>O Par Ideal no Prato e no Copo</h4></a>
+                        <a href="harmonizacao.html"><h4>O Par Ideal no Prato e no Copo</h4></a>
                         <p>Harmonizações que aquecem o coração e transformam cada gole em um abraço no paladar.</p>
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 </section>
 
-<?php include 'includes/footer.php'; ?>
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+    AOS.init({ duration: 400, easing: 'ease-out', once: true, offset: 80, delay: 0 });
+</script>
+
+</body>
+</html>

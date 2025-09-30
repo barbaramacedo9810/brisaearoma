@@ -1,14 +1,14 @@
 /* ======= Paleta de Cores Harmonizada ======= */
 :root {
-    --cor-escura: #363B40;       /* cinza grafite */
-    --cor-marrom: #BD836C;       /* marrom rosado */
-    --cor-verde: #76A694;        /* verde menta suave */
-    --cor-verde-escuro: #6FA66F; /* verde médio encorpado */
-    --cor-verde-claro: #B5D3A7;  /* verde suave */
-    --cor-verde-extra: #D9E6C4;  /* verde bem clarinho */
-    --cor-dourado: #D9A577;      /* dourado terroso */
-    --cor-fundo: #F2F2F2;        /* fundo claro */
-    --cor-texto: #363B40;        /* texto principal */
+    --cor-escura: #363B40;      /* cinza grafite */
+    --cor-marrom: #BD836C;      /* marrom rosado */
+    --cor-verde: #76A694;       /* verde menta suave */
+    --cor-verde-escuro: #6FA66F; /* verde médio mais encorpado */
+    --cor-verde-claro: #B5D3A7; /* verde suave */
+    --cor-verde-extra: #D9E6C4; /* verde bem clarinho */
+    --cor-dourado: #D9A577;     /* dourado terroso */
+    --cor-fundo: #F2F2F2;       /* fundo claro */
+    --cor-texto: #363B40;       /* texto principal */
 }
 
 /* ======= Reset básico ======= */
@@ -37,7 +37,7 @@ header h1 {
 
 /* ======= Barra de navegação ======= */
 .navbar {
-    background-color: var(--cor-verde-escuro) !important;
+    background-color: var(--cor-verde-escuro) !important; /* aqui troquei pelo verde médio */
 }
 
 .navbar a {
@@ -66,6 +66,7 @@ header h1 {
     transform: scale(1.05);
 }
 
+/* Botão Bootstrap */
 .btn-primary {
     background-color: var(--cor-marrom);
     border: none;
@@ -96,9 +97,9 @@ section {
 
 /* ======= Estilo especial para "Nossa História" ======= */
 .titulo-historia {
-    font-size: 4rem;
+    font-size: 4rem;      /* tamanho grande no desktop */
     font-weight: 800;
-    color: var(--titulo-color, #363B40); /* fallback */
+    color: var(--titulo-color, #363B40); /* fallback seguro */
     margin-bottom: 2rem;
 }
 
@@ -141,7 +142,7 @@ blockquote {
 /* ======= Text-box personalizada ======= */
 .text-box {
     padding: 20px 25px;
-    background: rgba(189, 131, 108, 0.1); /* marrom suave translúcido */
+    background: rgba(189, 131, 108, 0.1); /* marrom suave com transparência */
     border-radius: 15px;
     border: 3px solid var(--cor-dourado);
     box-sizing: border-box;
@@ -167,6 +168,7 @@ footer {
         font-size: 1.5rem;
     }
     .titulo-historia {
-        font-size: 2rem;
+        font-size: 2rem;  /* menor no celular */
     }
 }
+
