@@ -1,0 +1,186 @@
+<?php
+$title = "Cardápio dos Sonhos - Brisa & Aroma";
+include 'includes/header.php';
+?>
+
+<section class="container mt-5 py-5 text-center" data-aos="zoom-in">
+    <div class="hero-box mx-auto p-4 rounded shadow">
+        <h1 class="display-5 fw-bold" style="color: var(--cor-escura);">O Cardápio dos Seus Sonhos</h1>
+        <p class="lead mb-4" style="color: var(--cor-texto);">
+            Sabores que abraçam, temperos que contam histórias e pratos que deixam o coração quentinho.
+        </p>
+        <a href="#orcamento" class="btn btn-warning btn-lg px-4 py-2">
+            Monte seu cardápio agora!
+        </a>
+    </div>
+</section>
+
+<section class="container my-5">
+    <h2 class="text-center mb-5 titulo-historia" data-aos="fade-up">Como Funciona</h2>
+    <div class="row text-center d-flex align-items-stretch">
+
+        <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="p-4 rounded shadow h-100 text-center card-clickable d-flex flex-column text-box" onclick="toggleCard(event, 'ideaForm')">
+                <div class="d-flex flex-column align-items-center justify-content-center flex-grow-1">
+                    <h5 class="fw-bold">Conte sua ideia</h5>
+                    <p>Clique aqui e nos diga como você gostaria que fosse o seu evento.</p>
+                </div>
+                <div id="ideaForm" class="reveal mt-3">
+                    <label for="evento" class="form-label">Como você gostaria que fosse o seu evento?</label>
+                    <textarea id="evento" class="form-control mb-3" rows="3"
+                              placeholder="Ex: jantar romântico, festa de aniversário, churrasco..."></textarea>
+                    <button class="btn btn-success w-100" onclick="sendToWhatsApp(event)">Enviar ideia</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="p-4 rounded shadow h-100 text-center card-clickable d-flex flex-column text-box" onclick="toggleCard(event, 'chefSuggestions')">
+                <div class="d-flex flex-column align-items-center justify-content-center flex-grow-1">
+                    <h5 class="fw-bold">Sugestões do Chef</h5>
+                    <p><strong>O chef propõe combinações criativas</strong> para encantar seus convidados.</p>
+                </div>
+                <div id="chefSuggestions" class="reveal mt-3">
+                    <h6>Algumas sugestões que fazem sucesso:</h6>
+                    <ul class="text-start">
+                        <li>Risoto de limão siciliano e cogumelo Shimeji branco</li>
+                        <li>Frango marinado no maracujá</li>
+                        <li>Massas frescas artesanais (talharim caseiro, nhoque, etc.)</li>
+                        <li>Sobremesas criativas com frutas tropicais</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="p-4 rounded shadow h-100 text-center card-clickable d-flex flex-column text-box" onclick="toggleCard(event, 'menuDetails')">
+                <div class="d-flex flex-column align-items-center justify-content-center flex-grow-1">
+                    <h5 class="fw-bold">Definição do Menu</h5>
+                    <p>Clique para ver como alinhamos o cardápio perfeito.</p>
+                </div>
+                <div id="menuDetails" class="reveal mt-3">
+                    <h6>Etapas para definir o menu:</h6>
+                    <ul class="text-start">
+                        <li>Conversamos sobre preferências e restrições</li>
+                        <li>Apresentamos opções de entradas, pratos e sobremesas</li>
+                        <li>Ajustamos quantidades e estilo de serviço</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="400">
+            <div class="p-4 rounded shadow h-100 text-center card-clickable d-flex flex-column text-box" onclick="toggleCard(event, 'tasteDetails')">
+                <div class="d-flex flex-column align-items-center justify-content-center flex-grow-1">
+                    <h5 class="fw-bold">Deguste sua criação</h5>
+                    <p>Clique e descubra como será a experiência final.</p>
+                </div>
+                <div id="tasteDetails" class="reveal mt-3">
+                    <h6>O que você recebe:</h6>
+                    <ul class="text-start">
+                        <li>Pratos exclusivos preparados na hora</li>
+                        <li>Serviço completo para você não se preocupar</li>
+                        <li>Uma experiência gastronômica inesquecível</li>
+                        <li>Alguns eventos contam com degustação especial</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-5 titulo-historia" data-aos="fade-up">Diferenciais</h2>
+        <div class="row text-center d-flex align-items-stretch">
+            <div class="col-md-3 mb-4" data-aos="zoom-in" data-aos-delay="100">
+                <div class="p-4 rounded shadow h-100 d-flex flex-column justify-content-center align-items-center text-box">
+                    <h5 class="fw-bold">Cardápio Exclusivo</h5>
+                    <p>Feito sob medida para seu evento, respeitando cada detalhe.</p>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4" data-aos="zoom-in" data-aos-delay="200">
+                <div class="p-4 rounded shadow h-100 d-flex flex-column justify-content-center align-items-center text-box">
+                    <h5 class="fw-bold">Sabores Inesquecíveis</h5>
+                    <p>Receitas que encantam o paladar e marcam a memória.</p>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4" data-aos="zoom-in" data-aos-delay="300">
+                <div class="p-4 rounded shadow h-100 d-flex flex-column justify-content-center align-items-center text-box">
+                    <h5 class="fw-bold">Criatividade Gastronômica</h5>
+                    <p>Combinações inovadoras para surpreender seus convidados.</p>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4" data-aos="zoom-in" data-aos-delay="400">
+                <div class="p-4 rounded shadow h-100 d-flex flex-column justify-content-center align-items-center text-box">
+                    <h5 class="fw-bold">Respeito às Preferências</h5>
+                    <p>Adaptamos o menu às suas restrições e preferências alimentares.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="text-center py-5" id="orcamento" data-aos="fade-up">
+    <a href="https://api.whatsapp.com/send?phone=554196473945&text=Ol%C3%A1!%20Quero%20um%20card%C3%A1pio%20personalizado."
+       target="_blank"
+       class="btn btn-success btn-lg px-4 py-2">
+        <i class="bi bi-whatsapp me-2"></i> Peça seu cardápio personalizado
+    </a>
+</section>
+
+<!-- CSS necessário para esconder/mostrar o conteúdo .reveal -->
+<style>
+    .reveal {
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        transform: translateY(-8px);
+        transition: max-height 0.35s ease, opacity 0.35s ease, transform 0.35s ease;
+        pointer-events: none;
+    }
+    .reveal.open {
+        max-height: 1000px;
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+    }
+    .card-clickable { cursor: pointer; }
+    .card-clickable:hover { transform: translateY(-4px); transition: transform .2s ease; }
+</style>
+
+<script>
+    function toggleCard(event, id) {
+        const clickedEl = event && event.target ? event.target : null;
+        const targetReveal = document.getElementById(id);
+        if (clickedEl && targetReveal && targetReveal.contains(clickedEl)) {
+            return;
+        }
+        const allReveals = document.querySelectorAll('.reveal');
+        allReveals.forEach(el => {
+            if (el.id === id) {
+                el.classList.toggle('open');
+            } else {
+                el.classList.remove('open');
+            }
+        });
+    }
+    function sendToWhatsApp(event) {
+        event.stopPropagation();
+        const numero = "554196473945";
+        const texto = document.getElementById("evento").value;
+        if (!texto) {
+            alert("Por favor, escreva sua ideia antes de enviar.");
+            return;
+        }
+        const url = `https://api.whatsapp.com/send?phone=${numero}&text=${encodeURIComponent("Minha ideia para o evento: " + texto)}`;
+        window.open(url, "_blank");
+    }
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.card-clickable')) {
+            document.querySelectorAll('.reveal').forEach(r => r.classList.remove('open'));
+        }
+    });
+</script>
+
+<?php include 'includes/footer.php'; ?>
