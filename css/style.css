@@ -3,18 +3,14 @@
     --cor-escura: #363B40; /* cinza grafite */
     --cor-marrom: #BD836C; /* marrom rosado */
     --cor-verde: #76A694; /* verde menta suave */
-    --cor-verde-escuro: #6FA66F; /* verde médio mais encorpado */
+    --cor-verde-escuro: #6FA66F; /* verde médio encorpado */
     --cor-verde-claro: #B5D3A7; /* verde suave */
     --cor-verde-extra: #D9E6C4; /* verde bem clarinho */
     --cor-dourado: #D9A577; /* dourado terroso */
-    --cor-texto: #363B40; /* texto principal */
-    --titulo-color: #363B40; /* cor padrão do título */
-    --cor-fundo: #8F9562; /* Moss Green */
-
-    /* Novos tons de marrom para os cards */
-    --cor-cards-claro: #B07A4A; /* marrom claro / amendoado */
-    --cor-cards-medio: #A0683A; /* marrom médio */
-    --cor-cards-escuro: #935C2F; /* marrom forte */
+    --cor-texto: #000000; /* texto em preto padrão */
+    --titulo-color: #000000; /* títulos também em preto */
+    --cor-fundo: #FDFBF7; /* bege bem clarinho para fundo do site */
+    --cor-cards: #E6D5C3; /* areia suave para os cards */
 }
 
 /* ======= Reset básico ======= */
@@ -31,38 +27,31 @@ body {
     line-height: 1.6;
 }
 
-/* ======= Navbar transparente ======= */
+/* ======= Navbar ======= */
 nav.navbar.custom-navbar {
-    background: transparent !important;
-    box-shadow: none !important;
+    background: transparent !important; /* mantém o efeito flutuante */
     border: none !important;
-    position: absolute; /* fica sobre a imagem */
+    box-shadow: none !important;
+    position: absolute;
     top: 0;
-    left: 0;
     width: 100%;
-    z-index: 10; /* garante que fique acima da imagem */
-    padding: 1rem 2rem;
+    z-index: 1000;
 }
 
-/* Marca (nome Brisa & Aroma) */
 .custom-navbar .navbar-brand {
     font-weight: 700;
-    color: #fff !important; /* branco para contraste */
-    font-size: 1.5rem;
+    color: var(--cor-texto) !important;
+    font-size: 1.4rem;
     letter-spacing: 1px;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5); /* brilho suave pra não sumir */
 }
 
-/* Links da navbar */
 .custom-navbar .nav-link {
-    color: #fff !important; /* branco */
+    color: var(--cor-texto) !important;
     font-weight: 500;
-    margin-left: 20px;
+    margin-left: 15px;
     transition: color 0.3s ease;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
 }
 
-/* Hover e ativo nos links */
 .custom-navbar .nav-link:hover,
 .custom-navbar .nav-link.active {
     color: var(--cor-dourado) !important;
@@ -71,7 +60,7 @@ nav.navbar.custom-navbar {
 /* ======= Cabeçalho ======= */
 header {
     background-color: var(--cor-verde);
-    color: var(--cor-fundo);
+    color: var(--cor-texto);
     padding: 40px 20px;
     text-align: center;
     border-bottom: 3px solid var(--cor-marrom);
@@ -85,14 +74,13 @@ header h1 {
 /* ======= Botões ======= */
 .btn-custom {
     background-color: var(--cor-verde);
-    color: var(--cor-fundo);
+    color: #fff;
     padding: 10px 20px;
     border-radius: 25px;
     border: none;
     font-weight: 600;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    display: inline-block;
     text-decoration: none;
     text-align: center;
 }
@@ -105,7 +93,7 @@ header h1 {
 .btn-primary {
     background-color: var(--cor-marrom);
     border: none;
-    color: var(--cor-fundo);
+    color: #fff;
     font-weight: 600;
     padding: 0.6rem 1.2rem;
     border-radius: 8px;
@@ -122,32 +110,36 @@ section {
 }
 
 .text-center h2 {
-    color: var(--cor-verde);
+    color: var(--cor-texto);
     font-weight: 700;
 }
 
-/* ======= Títulos ======= */
+/* ======= Estilo especial "Nossa História" ======= */
 .titulo-historia {
     font-size: 4rem;
     font-weight: 800;
-    color: var(--titulo-color, #363B40);
+    color: var(--titulo-color);
     margin-bottom: 2rem;
 }
 
 /* ======= Cards ======= */
-.card, .text-box {
-    background-color: var(--cor-cards-claro); /* marrom claro */
+.card {
     border: 2px solid var(--cor-dourado);
+    background-color: var(--cor-cards);
     border-radius: 12px;
     padding: 1rem;
-    color: #000;
-    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    color: var(--cor-texto);
 }
 
-.card:hover, .text-box:hover {
-    background-color: var(--cor-cards-escuro); /* marrom mais forte no hover */
+.card:hover {
     transform: translateY(-4px);
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card h4 {
+    color: var(--cor-texto);
+    font-weight: 600;
 }
 
 /* ======= Imagens ======= */
@@ -167,7 +159,18 @@ blockquote {
     color: var(--cor-dourado);
 }
 
-/* ======= Hero Sections ======= */
+/* ======= Text-box ======= */
+.text-box {
+    padding: 20px 25px;
+    background: rgba(230, 213, 195, 0.4); /* tom suave, levemente transparente */
+    border-radius: 15px;
+    border: 2px solid var(--cor-dourado);
+    box-sizing: border-box;
+    font-size: 1.1rem;
+    color: var(--cor-texto);
+}
+
+/* ======= Hero Cardápio ======= */
 .hero-cardapio {
     position: relative;
     width: 100%;
@@ -211,7 +214,7 @@ blockquote {
 /* ======= Rodapé ======= */
 footer {
     background-color: var(--cor-escura);
-    color: var(--cor-fundo);
+    color: #fff;
     padding: 20px 0;
     font-size: 13px;
     text-align: center;
