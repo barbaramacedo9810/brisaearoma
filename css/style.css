@@ -1,14 +1,14 @@
 /* ======= Paleta de Cores Harmonizada ======= */
 :root {
-    --cor-escura: #363B40;      /* cinza grafite */
-    --cor-marrom: #BD836C;      /* marrom rosado */
-    --cor-verde: #76A694;       /* verde menta suave */
+    --cor-escura: #363B40; /* cinza grafite */
+    --cor-marrom: #BD836C; /* marrom rosado */
+    --cor-verde: #76A694; /* verde menta suave */
     --cor-verde-escuro: #6FA66F; /* verde médio mais encorpado */
     --cor-verde-claro: #B5D3A7; /* verde suave */
     --cor-verde-extra: #D9E6C4; /* verde bem clarinho */
-    --cor-dourado: #D9A577;     /* dourado terroso */
-    --cor-fundo: #F2F2F2;       /* fundo claro */
-    --cor-texto: #363B40;       /* texto principal */
+    --cor-dourado: #D9A577; /* dourado terroso */
+    --cor-fundo: #F2F2F2; /* fundo claro */
+    --cor-texto: #363B40; /* texto principal */
 }
 
 /* ======= Reset básico ======= */
@@ -72,7 +72,8 @@ header h1 {
 }
 
 /* ======= Botões ======= */
-.btn {
+/* Botões customizados (não sobrescrevem os do Bootstrap) */
+.btn-custom {
     background-color: var(--cor-verde);
     color: var(--cor-fundo);
     padding: 10px 20px;
@@ -81,14 +82,17 @@ header h1 {
     font-weight: 600;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
 }
 
-.btn:hover {
+.btn-custom:hover {
     background-color: var(--cor-dourado);
     transform: scale(1.05);
 }
 
-/* Botão Bootstrap */
+/* Ajustes de botões padrão Bootstrap */
 .btn-primary {
     background-color: var(--cor-marrom);
     border: none;
@@ -119,7 +123,7 @@ section {
 
 /* ======= Estilo especial para "Nossa História" ======= */
 .titulo-historia {
-    font-size: 4rem;      /* tamanho grande no desktop */
+    font-size: 4rem; /* tamanho grande no desktop */
     font-weight: 800;
     color: var(--titulo-color, #363B40); /* fallback seguro */
     margin-bottom: 2rem;
@@ -136,7 +140,7 @@ section {
 
 .card:hover {
     transform: translateY(-4px);
-    box-shadow: 0px 4px 10px rgba(0,0,0,0.08);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.08);
 }
 
 .card h4 {
@@ -150,7 +154,7 @@ img.rounded {
 }
 
 img.shadow {
-    box-shadow: 0px 3px 6px rgba(0,0,0,0.1);
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* ======= Blockquote ======= */
@@ -186,11 +190,13 @@ footer {
     h1 {
         font-size: 1.8rem;
     }
+
     h2 {
         font-size: 1.5rem;
     }
+
     .titulo-historia {
-        font-size: 2rem;  /* menor no celular */
+        font-size: 2rem; /* menor no celular */
     }
 }
 
@@ -234,5 +240,5 @@ footer {
     z-index: 2;
     color: #fff;
     padding: 20px;
-    text-shadow: 1px 1px 6px rgba(0,0,0,0.7);
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.7);
 }
