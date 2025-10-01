@@ -7,13 +7,13 @@
     --cor-verde-claro: #B5D3A7; /* verde suave */
     --cor-verde-extra: #D9E6C4; /* verde bem clarinho */
     --cor-dourado: #D9A577; /* dourado terroso */
-    --cor-texto: #000000; /* texto em preto padrão */
-    --titulo-color: #000000; /* títulos também em preto */
-    --cor-fundo: #FDFBF7; /* bege bem clarinho para fundo do site */
+    --cor-texto: #000000; /* texto preto */
+    --titulo-color: #000000; /* títulos em preto */
+    --cor-fundo: #FDFBF7; /* bege bem clarinho para fundo geral */
     --cor-cards: #E6D5C3; /* areia suave para os cards */
 }
 
-/* ======= Reset básico ======= */
+/* ======= Reset ======= */
 * {
     margin: 0;
     padding: 0;
@@ -29,7 +29,7 @@ body {
 
 /* ======= Navbar ======= */
 nav.navbar.custom-navbar {
-    background: transparent !important; /* mantém o efeito flutuante */
+    background: transparent !important; /* navbar flutuante */
     border: none !important;
     box-shadow: none !important;
     position: absolute;
@@ -73,7 +73,7 @@ header h1 {
 
 /* ======= Botões ======= */
 .btn-custom {
-    background-color: var(--cor-verde);
+    background-color: var(--cor-cards);
     color: #fff;
     padding: 10px 20px;
     border-radius: 25px;
@@ -114,11 +114,11 @@ section {
     font-weight: 700;
 }
 
-/* ======= Estilo especial "Nossa História" ======= */
+/* ======= Títulos especiais ======= */
 .titulo-historia {
     font-size: 4rem;
     font-weight: 800;
-    color: var(--titulo-color);
+    color: var(--cor-texto);
     margin-bottom: 2rem;
 }
 
@@ -153,7 +153,7 @@ img.shadow {
 
 /* ======= Blockquote ======= */
 blockquote {
-    border-left: 4px solid var(--cor-verde);
+    border-left: 4px solid var(--cor-fundo);
     padding-left: 1rem;
     font-style: italic;
     color: var(--cor-dourado);
@@ -162,7 +162,7 @@ blockquote {
 /* ======= Text-box ======= */
 .text-box {
     padding: 20px 25px;
-    background: rgba(230, 213, 195, 0.4); /* tom suave, levemente transparente */
+    background: rgba(230, 213, 195, 0.4); /* tom areia suave */
     border-radius: 15px;
     border: 2px solid var(--cor-dourado);
     box-sizing: border-box;
