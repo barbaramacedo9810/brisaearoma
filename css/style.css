@@ -73,7 +73,7 @@ header h1 {
 
 /* ======= Botões ======= */
 .btn-custom {
-    background-color: var(--cor-cards);
+    background-color: var(--cor-dourado);
     color: #fff;
     padding: 10px 20px;
     border-radius: 25px;
