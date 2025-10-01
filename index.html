@@ -16,6 +16,16 @@
 
     <!-- Ícones Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --cor-verde-extra: #D9E6C4; /* Verde clarinho */
+        }
+
+        body {
+            background-color: var(--cor-verde-extra);
+        }
+    </style>
 </head>
 <body>
 
@@ -36,7 +46,7 @@
     </div>
 </nav>
 
-<!-- Header / Hero -->
+<!-- Hero -->
 <header class="d-flex flex-column align-items-center text-center"
         style="background: url('img/marca.jpg') no-repeat center center;
                background-size: cover;
@@ -47,7 +57,7 @@
 </header>
 
 <!-- Nossa História -->
-<section class="py-5" style="background-color: #f6f6f6;">
+<section class="py-5">
     <div class="container">
         <h2 class="text-center mb-5 titulo-historia" data-aos="fade-up">Nossa História</h2>
 
@@ -57,9 +67,9 @@
                 <div class="text-box">
                     <p><strong>Nascida e criada no Rio Grande do Sul</strong>, mudou-se para Curitiba-PR, em busca de
                         novos caminhos.</p>
-                    <p>Começou a reorganizar minha vida e trabalhou em diversos ramos, entre eles uma floricultura.</p>
+                    <p>Comecei a reorganizar minha vida e trabalhei em diversos ramos, entre eles uma floricultura.</p>
                     <p>Foi então que <strong>os salgados e massas que eu já sabia preparar</strong> passaram a ganhar
-                        espaço — e percebeu que poderia ser uma boa forma de ter uma renda extra para cuidar do seu lar.
+                        espaço — e percebi que poderia ser uma boa forma de ter uma renda extra para cuidar do meu lar.
                     </p>
                 </div>
             </div>
@@ -91,7 +101,7 @@
 </section>
 
 <!-- Nossos Serviços -->
-<section class="py-5" style="background-color: #f6f6f6;">
+<section class="py-5">
     <div class="container">
         <h2 class="text-center mb-4">Nossos Serviços</h2>
         <div class="row">
@@ -136,7 +146,13 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
-    AOS.init({duration: 400, easing: 'ease-out', once: true, offset: 80, delay: 0});
+    AOS.init({
+        duration: 400,
+        easing: 'ease-out',
+        once: true,
+        offset: 80,
+        delay: 0
+    });
 </script>
 
 </body>

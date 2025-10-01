@@ -18,7 +18,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 
     <style>
-        /* CSS extra para os cards */
+        :root {
+            --cor-verde-extra: #D9E6C4; /* Verde clarinho */
+        }
+
+        body {
+            background-color: var(--cor-verde-extra);
+        }
+
         .reveal {
             max-height: 0;
             opacity: 0;
@@ -47,7 +54,7 @@
 </head>
 <body>
 
-<!-- Navbar padronizada -->
+<!-- Navbar -->
 <nav class="navbar navbar-expand-lg custom-navbar">
     <div class="container">
         <a class="navbar-brand" href="index.html">Brisa & Aroma</a>
@@ -65,7 +72,7 @@
 </nav>
 
 <!-- Hero Section -->
-<section class="hero-cardapio text-center" data-aos="zoom-in">
+<section class="hero-cardapio text-center" data-aos="zoom-in" style="background-color: var(--cor-verde-extra);">
     <img src="img/cardapio.jpg" alt="Cardápio" class="hero-img">
     <div class="hero-content">
         <h1 class="display-5 fw-bold">O Cardápio dos Seus Sonhos</h1>
@@ -158,7 +165,6 @@
                 </div>
             </div>
         </div>
-
     </div>
 </section>
 
