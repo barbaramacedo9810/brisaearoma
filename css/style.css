@@ -12,13 +12,49 @@
 }
 
 /* ======= Reset básico ======= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     background-color: var(--cor-fundo);
     color: var(--cor-texto);
-    margin: 0;
-    padding: 0;
     line-height: 1.6;
+}
+
+/* ======= Navbar (fixada igual em todas páginas) ======= */
+nav.navbar.custom-navbar {
+    background-color: var(--cor-verde-escuro) !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    padding: 0.8rem 1rem;
+    box-shadow: none !important;
+}
+
+/* Marca (nome Brisa & Aroma) */
+.custom-navbar .navbar-brand {
+    font-weight: 700;
+    color: var(--cor-fundo) !important;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+}
+
+/* Links da navbar */
+.custom-navbar .nav-link {
+    color: var(--cor-fundo) !important;
+    font-weight: 500;
+    margin-left: 15px;
+    transition: color 0.3s ease;
+}
+
+/* Hover e ativo nos links */
+.custom-navbar .nav-link:hover,
+.custom-navbar .nav-link.active {
+    color: var(--cor-dourado) !important;
 }
 
 /* ======= Cabeçalho ======= */
@@ -33,20 +69,6 @@ header {
 header h1 {
     font-weight: 700;
     color: var(--cor-dourado);
-}
-
-/* ======= Barra de navegação ======= */
-.navbar {
-    background-color: var(--cor-verde-escuro) !important; /* aqui troquei pelo verde médio */
-}
-
-.navbar a {
-    color: var(--cor-fundo) !important;
-    font-weight: 500;
-}
-
-.navbar a:hover {
-    color: var(--cor-dourado) !important;
 }
 
 /* ======= Botões ======= */
@@ -172,3 +194,34 @@ footer {
     }
 }
 
+.hero-cardapio {
+    position: relative;
+    height: 550px;
+    border: 4px solid var(--cor-dourado);
+    border-radius: 14px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* força a imagem a ser absoluta */
+.hero-cardapio .hero-img {
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+/* texto por cima */
+.hero-cardapio .hero-content {
+    position: relative;
+    z-index: 1;
+    color: #fff;
+    text-shadow: 1px 1px 6px rgba(0,0,0,0.8);
+    padding: 20px;
+}

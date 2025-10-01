@@ -6,7 +6,6 @@
     <title>Página Inicial - Brisa & Aroma</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    ```
     <!-- Bootstrap Bootswatch Theme -->
     <link href="https://bootswatch.com/5/sketchy/bootstrap.min.css" rel="stylesheet">
 
@@ -18,14 +17,11 @@
 
     <!-- Ícones Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-    ```
-
 </head>
 <body>
 
 <!-- Barra de navegação -->
-
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg custom-navbar">
     <div class="container">
         <a class="navbar-brand" href="index.html">Brisa & Aroma</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -58,7 +54,7 @@
     <div class="container">
         <h2 class="text-center mb-5 titulo-historia" data-aos="fade-up">Nossa História</h2>
 
-        ```
+
         <!-- História 1 -->
         <div class="row align-items-center mb-5">
             <div class="col-md-6">
@@ -96,12 +92,42 @@
             </div>
         </div>
 
-        <!-- As outras histórias (3 a 6) seguem o mesmo padrão -->
-        <!-- Troquei apenas o caminho das imagens para "img/" -->
-        <!-- ... -->
-    </div>
-    ```
+        <!-- História 1 -->
+        <div class="row align-items-center mb-5">
+            <div class="col-md-6">
+                <div class="text-box">
+                    <p><strong>Nascida e criada no Rio Grande do Sul</strong>, mudou-se para Curitiba-PR, em busca de
+                        novos caminhos.</p>
+                    <p>Começou a reorganizar minha vida e trabalhou em diversos ramos, entre eles uma floricultura.</p>
+                    <p>Foi então que <strong>os salgados e massas que eu já sabia preparar</strong> passaram a ganhar
+                        espaço — e percebeu que poderia ser uma boa forma de ter uma renda extra para cuidar do seu lar.
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-6 text-center" data-aos="fade-up">
+                <img src="img/origem.jpg" alt="Origem" class="img-fluid rounded shadow"
+                     style="width: 530px; height: auto; border-radius: 10px;">
+            </div>
+        </div>
 
+        <!-- História 2 -->
+        <div class="row align-items-center mb-5 flex-md-row-reverse">
+            <div class="col-md-6">
+                <div class="text-box">
+                    <p><strong>Assim, surgiram a Patrícia, a Schirlei e a Suelen</strong>, minhas filhas.</p>
+                    <p>Vendia para conhecidos e vizinhos, explorando esse universo da <strong>comida caseira que todo
+                        mundo ama</strong>.</p>
+                    <blockquote>
+                        <p class="mb-0">Afinal, quem resiste a um macarrão feito à mão, com cheirinho de lar e o cuidado
+                            de uma vó querida?</p>
+                    </blockquote>
+                </div>
+            </div>
+            <div class="col-md-6 text-center" data-aos="fade-up">
+                <img src="img/menu-personalizado.jpg" alt="Massas caseiras" class="img-fluid rounded shadow"
+                     style="width: 530px; height: auto; border-radius: 10px;">
+            </div>
+        </div>
 </section>
 
 <!-- Nossos Serviços -->
@@ -110,8 +136,6 @@
     <div class="container">
         <h2 class="text-center mb-4">Nossos Serviços</h2>
         <div class="row">
-
-            ```
             <div class="col-md-4 text-center">
                 <div class="card text-dark mb-4">
                     <div class="card-body">
@@ -143,9 +167,13 @@
 
         </div>
     </div>
-    ```
 
 </section>
+
+<!-- Rodapé -->
+<footer class="bg-dark text-light text-center py-4 mt-5">
+    © 2025 Brisa & Aroma | Todos os direitos reservados.
+</footer>
 
 <!-- Scripts -->
 
