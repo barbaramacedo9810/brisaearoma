@@ -2,8 +2,8 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Página Inicial - Brisa & Aroma</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brisa e Aroma</title>
 
     <!-- Bootstrap Bootswatch Theme -->
     <link href="https://bootswatch.com/5/sketchy/bootstrap.min.css" rel="stylesheet">
@@ -11,7 +11,7 @@
     <!-- CSS do AOS -->
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
-    <!-- CSS personalizado -->
+    <!-- CSS personalizado (sempre depois do Bootstrap) -->
     <link rel="stylesheet" href="css/style.css">
 
     <!-- Ícones Bootstrap -->
@@ -23,7 +23,7 @@
         }
 
         body {
-            background-color: var(--cor-fundo);
+            background-color: var(--cor-fundo) !important;
         }
     </style>
 </head>
@@ -53,7 +53,7 @@
                height: 550px;
                color: #fff;
                padding-top: 400px;">
-    <a href="#orcamento" class="btn btn-warning btn-lg mt-3">Solicitar Evento</a>
+    <a href="#orcamento" class="btn btn-custom btn-lg mt-3">Solicitar Evento</a>
 </header>
 
 <!-- Nossa História -->
@@ -157,3 +157,4 @@
 
 </body>
 </html>
+```
