@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brisa e Aroma</title>
+    <title>Brisa & Aroma</title>
 
     <!-- Bootstrap Bootswatch Theme -->
     <link href="https://bootswatch.com/5/sketchy/bootstrap.min.css" rel="stylesheet">
@@ -14,24 +14,16 @@
     <!-- Ícones do Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 
+    <!-- Fontes -->
     <link href="https://fonts.googleapis.com/css2?family=News+Cycle:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text&display=swap" rel="stylesheet">
 
-    <!-- CSS personalizado (sempre por último) -->
+    <!-- CSS personalizado -->
     <link rel="stylesheet" href="css/style.css">
-
-    <style>
-        :root {
-            --cor-fundo: #F5F0E8; /* bege neutro quase marfim */
-        }
-
-        body {
-            background-color: var(--cor-fundo) !important;
-        }
-    </style>
 </head>
 <body>
 
-<!-- Barra de navegação -->
+<!-- Navbar -->
 <nav class="navbar navbar-expand-lg custom-navbar">
     <div class="container">
         <a class="navbar-brand" href="index.html">Brisa & Aroma</a>
@@ -50,17 +42,10 @@
 
 <!-- Hero -->
 <header class="d-flex flex-column align-items-center justify-content-center text-center"
-        style="background: url('img/cardapio.jpg') no-repeat center center;
-               background-size: cover;
-               height: 500px;
-               color: #fff;
-               position: relative;">
+        style="background: url('img/cardapio.jpg') no-repeat center center; background-size: cover; height: 500px; color: #fff; position: relative;">
     <h1 class="logo-text">Brisa & Aroma</h1>
-
-    <!-- Botão -->
     <a href="#orcamento" class="btn btn-custom btn-lg mt-4">Solicitar Evento</a>
 </header>
-
 
 <!-- Nossa História -->
 <section class="py-5">
@@ -143,6 +128,15 @@
     </div>
 </section>
 
+<!-- Orçamento / WhatsApp -->
+<section class="text-center py-5" id="orcamento" data-aos="fade-up">
+    <a href="https://api.whatsapp.com/send?phone=554196473945&text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os."
+       target="_blank"
+       class="btn btn-success btn-lg px-4 py-2">
+        <i class="bi bi-whatsapp me-2"></i> Fale conosco pelo WhatsApp
+    </a>
+</section>
+
 <!-- Rodapé -->
 <footer class="bg-dark text-light text-center py-4 mt-5">
     © 2025 Brisa & Aroma | Todos os direitos reservados.
@@ -152,15 +146,8 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
-    AOS.init({
-        duration: 400,
-        easing: 'ease-out',
-        once: true,
-        offset: 80,
-        delay: 0
-    });
+    AOS.init({duration: 400, easing: 'ease-out', once: true, offset: 80, delay: 0});
 </script>
 
 </body>
 </html>
-
