@@ -373,7 +373,7 @@ body {
 /* ===== Fonte Anybody para títulos ===== */
 .titulos-anybody {
     font-family: 'Anybody', cursive !important;
-    font-weight: 400 !important;
+    font-weight: 1000 !important;
     font-style: italic !important;
 }
 
@@ -423,8 +423,8 @@ h1, h2, h3, h4 {
 .btn-custom {
     background-color: #BD836C !important;
     color: #fff !important;
-    font-weight: 700;
-    border-radius: 5px;
+    font-weight: 900;
+    border-radius: 20px;
 }
 
 /* Rodapé */
