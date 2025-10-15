@@ -13,6 +13,7 @@
     --cor-cards: #E6D5C3; /* areia suave para os cards */
 }
 
+
 /* ======= Reset ======= */
 * {
     margin: 0;
@@ -69,6 +70,31 @@ header {
 header h1 {
     font-weight: 700;
     color: var(--cor-dourado);
+}
+
+/* ======= Título principal (estilo boho) ======= */
+@import url('https://fonts.googleapis.com/css2?family=Ephesis&display=swap');
+
+.logo-text {
+    font-family: 'Ephesis', cursive;
+    font-size: 6rem;
+    color: var(--cor-dourado);
+    text-shadow: 3px 4px 8px rgba(0, 0, 0, 0.35);
+    letter-spacing: 2px;
+    margin-top: 2rem;
+    animation: fadeInDown 1s ease-in-out;
+}
+
+/* Animação suave de entrada */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* ======= Botões ======= */
