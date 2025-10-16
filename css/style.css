@@ -74,19 +74,69 @@ header h1 {
     font-family: 'DM Serif Text', serif !important;
 }
 
-/* ======= Fonte para títulos principais com Anybody ======= */
+/* ======= Fonte para títulos principais ======= */
 .titulos-anybody,
 h1, h2, h3, h4, h5, h6,
 .display-1, .display-2, .display-3, .display-4, .display-5, .display-6,
-.lead, .titulo-historia, .logo-text {
+.lead, .titulo-historia {
     font-family: 'Anybody', cursive !important;
     font-weight: 400 !important;
     font-style: italic !important;
 }
 
+/* ======= Estilo exclusivo do logo “Brisa & Aroma” ======= */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+.logo-text {
+    font-family: 'Great Vibes', cursive !important;
+    font-size: 84px !important;
+    font-weight: 400;
+    text-align: center;
+    color: #e2d0b5; /* tom areia dourado */
+    text-shadow: 0 1px 0 #c1a47b,
+    0 2px 0 #b58d6d,
+    0 3px 2px rgba(0, 0, 0, 0.4),
+    0 4px 6px rgba(0, 0, 0, 0.3),
+    0 5px 12px rgba(0, 0, 0, 0.25);
+    letter-spacing: 2px;
+    background: none !important;
+    position: relative;
+    display: inline-block;
+    margin-top: 1rem;
+    filter: drop-shadow(0 0 2px rgba(255, 235, 200, 0.5));
+}
+
+/* Brilho dourado suave */
+.logo-text::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 220, 150, 0.3) 50%, rgba(255, 255, 255, 0.1) 100%);
+    mix-blend-mode: overlay;
+    border-radius: 10px;
+    pointer-events: none;
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+    .logo-text {
+        font-size: 62px !important;
+    }
+}
+
+@media (max-width: 600px) {
+    .logo-text {
+        font-size: 48px !important;
+    }
+}
+
+
 /* ======= Aparência padronizada para títulos de seção ======= */
 .titulo-historia {
-    font-weight: 700 !important; /* Mantém forte se quiser */
+    font-weight: 700 !important;
     font-size: 2rem !important;
     color: var(--titulo-color) !important;
     letter-spacing: 0.5px;
@@ -362,19 +412,11 @@ footer {
     }
 }
 
-
 /* ===== Fundo padrão - Pág inicial ===== */
 body {
-    background-color: #FAF3E6 !important; /* bege clarinho */
+    background-color: #FAF3E6 !important;
     font-family: 'News Cycle', sans-serif;
     color: #363B40;
-}
-
-/* ===== Fonte Anybody para títulos ===== */
-.titulos-anybody {
-    font-family: 'Anybody', cursive !important;
-    font-weight: 1000 !important;
-    font-style: italic !important;
 }
 
 /* ===== Títulos gerais com DM Serif Text ===== */
