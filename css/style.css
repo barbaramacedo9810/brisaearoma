@@ -48,14 +48,14 @@ nav.navbar.custom-navbar .navbar-brand {
     font-weight: 700;
     color: var(--cor-logo) !important; /* Rosa Chá */
     font-size: 1.4rem;
-    letter-spacing: 1px;
+    letter-spacing: 10px; /* Estava em 3 - aumenta ou diminui o espaçamento do brisa e aroma */
     font-family: 'DM Serif Text', serif !important;
 }
 
 nav.navbar.custom-navbar .nav-link {
     color: var(--cor-logo) !important; /* Garante que todos os links fiquem da mesma cor do logo */
-    font-weight: 700 !important;
-    margin-left: 15px;
+    font-weight: 600 !important;
+    margin-left: 5px;
     font-family: 'DM Serif Text', serif !important;
 }
 
@@ -95,7 +95,7 @@ h1, h2, h3, h4, h5, h6,
 
 .logo-text {
     font-family: 'Righteous', cursive !important;
-    font-size: 84px !important;
+    font-size: 100px !important;
     color: #EAD7D1; /* Rosa Chá */
     text-align: center;
     letter-spacing: 1px;
@@ -105,10 +105,10 @@ h1, h2, h3, h4, h5, h6,
 
     /* Efeito extrudado / 3D com múltiplas camadas de sombra */
     text-shadow: 1px 1px 0 #BD836C, /* sombra marrom rosado leve */ 2px 2px 0 #BD836C,
-    3px 3px 0 #D9A577, /* dourado mais intenso na profundidade média */ 4px 4px 0 #BD836C; /* marrom rosado */ 5px 5px 0 #6FA66F; /* verde médio encorpado */ 6px 6px 6px rgba(0, 0, 0, 0.25); /* sombra final suave realista */
+    5px 5px 0 #D9A577, /* dourado mais intenso na profundidade média */ 6px 6px 0 #BD836C; /* marrom rosado */ 7px 7px 0 #6FA66F; /* verde médio encorpado */ 6px 6px 6px rgba(0, 0, 0, 0.25); /* sombra final suave realista */
 
     /* Brilho aconchegante */
-    filter: drop-shadow(0 0 3px rgba(255, 235, 200, 0.6));
+    filter: drop-shadow(0 0 4px rgba(255, 235, 200, 0.6));
 
     /* Pequeno efeito de brilho sutil */
 }
