@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Marmitas Semanais & Mensais - Brisa & Aroma</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap Bootswatch Theme -->
+    <link href="https://bootswatch.com/5/sketchy/bootstrap.min.css" rel="stylesheet">
+
+    <!-- CSS do AOS -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+    <!-- Ícones do Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=News+Cycle:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text&family=News+Cycle:wght@700&display=swap"
+          rel="stylesheet">
+
+    <!-- CSS personalizado -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        :root {
+            --cor-fundo: #F5F0E8;
+        }
+
+        body {
+            background-color: var(--cor-fundo);
+        }
+
+        .hero-marmitas {
+            position: relative;
+            background: url('img/marmitas-bg.jpg') center/cover no-repeat;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero-marmitas::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(54, 59, 64, 0.6);
+            z-index: 1;
+        }
+
+        .hero-marmitas .hero-content {
+            position: relative;
+            z-index: 2;
+            color: #fff;
+            padding: 2rem;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg custom-navbar">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">Brisa & Aroma</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+                <li class="nav-item"><a class="nav-link" href="cardapio.html">Cardápio</a></li>
+                <li class="nav-item"><a class="nav-link" href="chef.html">Chef</a></li>
+                <li class="nav-item"><a class="nav-link active" href="marmitas.html">Marmitas</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero -->
+<header class="d-flex flex-column align-items-center text-center"
+        style="background: url('img/cardapio.jpg') no-repeat center center;
+               background-size: cover;
+               height: 500px;
+               color: #fff;
+               padding-top: 200px;">
+    <h1 class="display-5 fw-bold">Brisa & Aroma – Marmitas Semanais e Mensais</h1>
+    <p class="lead mb-4">
+        Refeições caseiras, equilibradas e cheias de sabor — preparadas com carinho para o seu dia a dia.
+        Escolha seu plano semanal, quinzenal ou mensal e tenha praticidade sem abrir mão da qualidade.
+    </p>
+    <a href="#planos" class="btn btn-success btn-lg px-4 py-2">
+        Conheça nossos planos
+    </a>
+    </div>
+    </section>
+</header>
+
+<!-- Como Funciona -->
+<section class="py-5" style="background-color: #fcf7f1;">
+    <div class="container">
+        <h2 class="text-center mb-5 titulo-historia" data-aos="fade-up">Como Funciona</h2>
+        <div class="row text-center d-flex align-items-stretch">
+
+            <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="p-4 rounded shadow h-100 d-flex flex-column justify-content-center align-items-center text-box">
+                    <i class="bi bi-list-check fs-1 mb-3"></i>
+                    <h5>Monte Seu Cardápio</h5>
+                    <p>Escolha entre opções tradicionais, leves, vegetarianas ou fitness. Tudo sob medida.</p>
+                </div>
+            </div>
+
+            <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="p-4 rounded shadow h-100 d-flex flex-column justify-content-center align-items-center text-box">
+                    <i class="bi bi-calendar-week fs-1 mb-3"></i>
+                    <h5>Escolha o Plano</h5>
+                    <p>Semanal, quinzenal ou mensal — você decide a frequência e nós cuidamos do resto.</p>
+                </div>
+            </div>
+
+            <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="p-4 rounded shadow h-100 d-flex flex-column justify-content-center align-items-center text-box">
+                    <i class="bi bi-box-seam fs-1 mb-3"></i>
+                    <h5>Preparo e Entrega</h5>
+                    <p>As marmitas são preparadas com ingredientes frescos e entregues prontas para consumo.</p>
+                </div>
+            </div>
+
+            <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="400">
+                <div class="p-4 rounded shadow h-100 d-flex flex-column justify-content-center align-items-center text-box">
+                    <i class="bi bi-emoji-smile fs-1 mb-3"></i>
+                    <h5>Saboreie com Tranquilidade</h5>
+                    <p>Economize tempo, mantenha uma alimentação equilibrada e aproveite seu dia.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Seção nova: Marmitas para a Semana ou Mês -->
+<section class="py-5 bg-light">
+    <div class="container text-center">
+        <h2 class="mb-4 titulo-historia" data-aos="fade-up">Marmitas para a Semana ou para o Mês</h2>
+        <p class="mb-5" data-aos="fade-up" data-aos-delay="100">
+            Prefere se organizar de uma vez? Nós também pensamos nisso! <br>
+            Peça suas marmitas para a semana ou para o mês e receba tudo fresquinho, porções equilibradas e prontas para
+            o consumo.
+            Ideal para quem quer praticidade, sabor e saúde na rotina.
+        </p>
+        <a href="marmitas.html" class="btn btn-outline-success btn-lg px-4 py-2" data-aos="zoom-in"
+           data-aos-delay="200">
+            Saiba mais sobre nossos planos
+        </a>
+    </div>
+</section>
+
+<!-- Planos -->
+<section class="py-5" style="background-color: #fcf7f1;" id="planos">
+    <div class="container">
+        <h2 class="text-center mb-5 titulo-historia" data-aos="fade-up">Nossos Planos</h2>
+        <div class="row text-center">
+            <div class="col-md-4 mb-4" data-aos="zoom-in" data-aos-delay="100">
+                <div class="p-4 rounded shadow h-100">
+                    <h4 class="fw-bold mb-3">Plano Semanal</h4>
+                    <p>5 marmitas por semana, com opções variadas e equilibradas.</p>
+                    <p><strong>A partir de R$ 120</strong></p>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4" data-aos="zoom-in" data-aos-delay="200">
+                <div class="p-4 rounded shadow h-100">
+                    <h4 class="fw-bold mb-3">Plano Quinzenal</h4>
+                    <p>10 marmitas — ideal para quem quer praticidade sem abrir mão do sabor.</p>
+                    <p><strong>A partir de R$ 230</strong></p>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4" data-aos="zoom-in" data-aos-delay="300">
+                <div class="p-4 rounded shadow h-100">
+                    <h4 class="fw-bold mb-3">Plano Mensal</h4>
+                    <p>20 marmitas — alimentação completa, com desconto especial e entrega programada.</p>
+                    <p><strong>A partir de R$ 440</strong></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA / WhatsApp -->
+<section class="text-center py-5" data-aos="fade-up">
+    <a href="https://api.whatsapp.com/send?phone=554196473945&text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20os%20planos%20de%20marmitas%20semanais%20ou%20mensais."
+       target="_blank"
+       class="btn btn-success btn-lg px-4 py-2">
+        <i class="bi bi-whatsapp me-2"></i> Peça agora pelo WhatsApp
+    </a>
+</section>
+
+<!-- Rodapé -->
+<footer class="bg-dark text-light text-center py-4 mt-5">
+    © 2025 Brisa & Aroma | Comida caseira feita com amor.
+</footer>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+    AOS.init({duration: 400, easing: 'ease-out', once: true, offset: 80, delay: 0});
+</script>
+
+</body>
+</html>
