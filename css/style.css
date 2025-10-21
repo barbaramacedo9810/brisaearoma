@@ -105,7 +105,7 @@ h1, h2, h3, h4, h5, h6,
 
     /* Efeito extrudado / 3D com múltiplas camadas de sombra */
     text-shadow: 1px 1px 0 #BD836C, /* sombra marrom rosado leve */ 2px 2px 0 #BD836C,
-    5px 5px 0 #D9A577, /* dourado mais intenso na profundidade média */ 6px 6px 0 #BD836C; /* marrom rosado */ 7px 7px 0 #6FA66F; /* verde médio encorpado */ 6px 6px 6px rgba(0, 0, 0, 0.25); /* sombra final suave realista */
+    3px 3px 0 #D9A577, /* dourado mais intenso na profundidade média */ 6px 6px 0 #BD836C; /* marrom rosado */ 7px 7px 0 #6FA66F; /* verde médio encorpado */ 5px 5px 5px rgba(0, 0, 0, 0.25); /* sombra final suave realista */
 
     /* Brilho aconchegante */
     filter: drop-shadow(0 0 4px rgba(255, 235, 200, 0.6));
@@ -483,4 +483,52 @@ img {
 /* Blockquote styling */
 blockquote p {
     font-style: italic;
+}
+
+/* ======= Material Icons fix + arrow styling ======= */
+
+/* Garante que o ligature do Material Icons seja renderizado corretamente
+   (usa !important só para prevenir sobrescritas indesejadas) */
+.material-icons {
+    font-family: 'Material Icons' !important;
+    font-weight: normal !important;
+    font-style: normal !important;
+    font-size: 30px !important; /* tamanho padrão, responsivo abaixo */
+    line-height: 1 !important;
+    height: 1em;
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    user-select: none;
+    transform-origin: center;
+}
+
+/* Cor e transição da seta */
+.arrow-icon {
+    color: var(--cor-nav, #A78F7A); /* usa a variável já definida */
+    font-size: 30px !important;
+    margin-top: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+/* Gira a seta quando o card recebe .active */
+.card-clickable.active .arrow-icon {
+    transform: rotate(180deg);
+}
+
+/* Mantém o hover já existente e evita que nossa adição o quebre.
+   (Não altere estas regras se já tiver .card-clickable:hover no seu CSS) */
+.card-clickable:hover {
+    /* mantemos a transformação existente */
+    transform: translateY(-4px);
+    transition: transform .2s ease;
+}
+
+/* Responsividade — reduz um pouco a seta em telas pequenas */
+@media (max-width: 768px) {
+    .material-icons, .arrow-icon {
+        font-size: 26px !important;
+    }
 }

@@ -16,6 +16,7 @@
 
     <link href="https://fonts.googleapis.com/css2?family=News+Cycle:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text&family=News+Cycle:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <!-- CSS personalizado (sempre por último) -->
     <link rel="stylesheet" href="css/style.css">
@@ -93,6 +94,9 @@
 
 </header>
 
+<!-- Importar Material Icons -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 <!-- Como Funciona -->
 <section class="container my-5 como-funciona">
     <h2 class="text-center mb-5 titulo-historia" data-aos="fade-up">Como Funciona</h2>
@@ -105,6 +109,7 @@
                 <div class="d-flex flex-column align-items-center justify-content-center flex-grow-1">
                     <h5 class="fw-bold">Conte sua ideia</h5>
                     <p>Clique aqui e nos diga como você gostaria que fosse o seu evento.</p>
+                    <span class="material-icons arrow-icon">arrow_drop_down</span>
                 </div>
                 <div id="ideaForm" class="reveal mt-3">
                     <label for="evento" class="form-label">Como você gostaria que fosse o seu evento?</label>
@@ -121,7 +126,8 @@
                  onclick="toggleCard(event, 'chefSuggestions')">
                 <div class="d-flex flex-column align-items-center justify-content-center flex-grow-1">
                     <h5 class="fw-bold">Sugestões do Chef</h5>
-                    <p class="texto-card"><strong>O chef propõe combinações criativas</strong> para encantar seus convidados.</p>
+                    <p><strong>O chef propõe combinações criativas!</strong> Clique aqui e descubra combinações irresistíveis.</p>
+                    <span class="material-icons arrow-icon">arrow_drop_down</span>
                 </div>
                 <div id="chefSuggestions" class="reveal mt-3">
                     <h6>Algumas sugestões que fazem sucesso:</h6>
@@ -141,7 +147,8 @@
                  onclick="toggleCard(event, 'menuDetails')">
                 <div class="d-flex flex-column align-items-center justify-content-center flex-grow-1">
                     <h5 class="fw-bold">Definição do Menu</h5>
-                    <p>Clique para ver como alinhamos o cardápio perfeito.</p>
+                    <p>Clique para ver como alinhamos o cardápio ideal.</p>
+                    <span class="material-icons arrow-icon">arrow_drop_down</span>
                 </div>
                 <div id="menuDetails" class="reveal mt-3">
                     <h6>Etapas para definir o menu:</h6>
@@ -160,7 +167,8 @@
                  onclick="toggleCard(event, 'tasteDetails')">
                 <div class="d-flex flex-column align-items-center justify-content-center flex-grow-1">
                     <h5 class="fw-bold">Deguste sua criação</h5>
-                    <p>Clique e descubra como será a experiência final.</p>
+                    <p>Clique aqui e viva a experiência completa.</p>
+                    <span class="material-icons arrow-icon">arrow_drop_down</span>
                 </div>
                 <div id="tasteDetails" class="reveal mt-3">
                     <h6>O que você recebe:</h6>
@@ -176,6 +184,52 @@
 
     </div>
 </section>
+
+<script>
+    function toggleCard(event, id) {
+        event.stopPropagation();
+
+        // elemento .card-clickable que foi clicado (subir até encontrar)
+        const card = event.currentTarget;
+        const targetReveal = document.getElementById(id);
+        if (!targetReveal) return;
+
+        // Fecha outros reveals e remove .active de outros cards
+        document.querySelectorAll('.card-clickable').forEach(c => {
+            if (c !== card) {
+                c.classList.remove('active');
+                const otherReveal = c.querySelector('.reveal');
+                if (otherReveal) otherReveal.classList.remove('open');
+            }
+        });
+
+        // Alterna o reveal e a classe active do card atual
+        targetReveal.classList.toggle('open');
+        card.classList.toggle('active');
+    }
+
+    // Fecha tudo quando clicar fora dos cards
+    document.addEventListener('click', function (e) {
+        if (!e.target.closest('.card-clickable')) {
+            document.querySelectorAll('.reveal').forEach(r => r.classList.remove('open'));
+            document.querySelectorAll('.card-clickable').forEach(c => c.classList.remove('active'));
+        }
+    });
+
+    // Função sendToWhatsApp (mantive a sua)
+    function sendToWhatsApp(event) {
+        event.stopPropagation();
+        const numero = "554196473945";
+        const texto = document.getElementById("evento").value;
+        if (!texto) {
+            alert("Por favor, escreva sua ideia antes de enviar.");
+            return;
+        }
+        const url = `https://api.whatsapp.com/send?phone=${numero}&text=${encodeURIComponent("Minha ideia para o evento: " + texto)}`;
+        window.open(url, "_blank");
+    }
+</script>
+
 
 <!-- Diferenciais -->
 <section class="py-5">
