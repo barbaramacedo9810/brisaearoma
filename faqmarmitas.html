@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Brisa & Aroma</title>
+
+    <!-- Fonte Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --cor-fundo: #f8f5f0;
+            --cor-marrom: #BD836C;
+            --cor-texto: #333;
+            --cor-destaque: #4a7a5c;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--cor-fundo);
+            color: var(--cor-texto);
+            margin: 0;
+            padding: 40px 10%;
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: var(--cor-marrom);
+            margin-bottom: 10px;
+        }
+
+        p.descricao {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 1rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            margin-bottom: 60px;
+        }
+
+        th {
+            background-color: var(--cor-marrom);
+            color: white;
+            padding: 14px;
+            text-align: left;
+            font-weight: 500;
+        }
+
+        td {
+            padding: 14px;
+            border-bottom: 1px solid #f0e8e4;
+            vertical-align: top;
+        }
+
+        tr:hover {
+            background-color: #f8f4f2;
+        }
+
+        .categoria {
+            font-weight: 600;
+            color: var(--cor-marrom);
+        }
+
+        .preco {
+            font-weight: 600;
+            color: var(--cor-destaque);
+        }
+
+        .custo {
+            color: #777;
+            font-size: 0.95em;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.9em;
+            color: #777;
+            margin-top: 40px;
+        }
+
+        .btn-voltar {
+            display: inline-block;
+            background: var(--cor-marrom);
+            color: #fff;
+            padding: 10px 24px;
+            text-decoration: none;
+            border-radius: 6px;
+            margin-top: 30px;
+            transition: background 0.3s;
+        }
+
+        .btn-voltar:hover {
+            background: #a56d57;
+        }
+
+        .subtitulo {
+            text-align: center;
+            color: var(--cor-marrom);
+            margin-top: 60px;
+            font-weight: 600;
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            body {
+                padding: 20px;
+            }
+
+            table, th, td {
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<h2 class="subtitulo">💬 Perguntas Frequentes</h2>
+<p class="descricao">
+    Confira as principais dúvidas sobre pedidos, prazos, entregas e conservação das nossas marmitas.
+</p>
+
+<table class="faq-table">
+    <thead>
+    <tr>
+        <th>Perguntas</th>
+        <th>Respostas</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td class="categoria"><i>📍</i> Qual é a área de entrega?</td>
+        <td>Entregamos em <strong>Curitiba e Região Metropolitana</strong>. A taxa varia conforme o bairro — confirme o
+            valor no momento do pedido.
+        </td>
+    </tr>
+    <tr>
+        <td class="categoria"><i>⏱️</i> Qual é o prazo de entrega?</td>
+        <td>O prazo é de <strong>24 a 36 horas</strong>, garantindo ingredientes sempre frescos e marmitas preparadas
+            com cuidado.
+        </td>
+    </tr>
+    <tr>
+        <td class="categoria"><i>📅</i> Quais são os dias e horários de entrega?</td>
+        <td>De <strong>segunda a sexta</strong>, das <strong>10h às 18h</strong>. Aos <strong>sábados</strong>, das 10h
+            às 14h.
+        </td>
+    </tr>
+    <tr>
+        <td class="categoria"><i>🕒</i> Posso agendar um horário específico?</td>
+        <td>Você pode escolher o <strong>dia e o período</strong> (manhã: 8h–12h | tarde: 12h–18h). Não é possível
+            definir um horário exato devido à rota de entregas.
+        </td>
+    </tr>
+    <tr>
+        <td class="categoria"><i>🥶</i> Qual é a validade das marmitas?</td>
+        <td>As marmitas têm validade de até <strong>3 meses</strong> após a produção, desde que armazenadas em <strong>freezer
+            ou congelador</strong>.
+        </td>
+    </tr>
+    <tr>
+        <td class="categoria"><i>💳</i> Quais são as formas de pagamento?</td>
+        <td>Aceitamos <strong>cartões de crédito e débito</strong>, além de <strong>transferência ou PIX</strong>.</td>
+    </tr>
+    <tr>
+        <td class="categoria"><i>🍴</i> Posso personalizar meu combo?</td>
+        <td>Claro! É só entrar em contato e ajustamos o cardápio conforme suas preferências e necessidades.</td>
+    </tr>
+    <tr>
+        <td class="categoria"><i>🧊</i> Como devo armazenar minhas marmitas?</td>
+        <td>Assim que receber o pedido, coloque as marmitas no <strong>freezer ou congelador</strong> para manter o
+            frescor e a qualidade.
+        </td>
+    </tr>
+    <tr>
+        <td class="categoria"><i>🔥</i> As marmitas podem ir direto do freezer para o micro-ondas?</td>
+        <td>Sim! As embalagens são <strong>resistentes a altas e baixas temperaturas</strong>, seguras para o uso direto
+            no micro-ondas.
+        </td>
+    </tr>
+    <tr>
+        <td class="categoria"><i>🍽️</i> Como aquecer corretamente minha marmita?</td>
+        <td>
+            <strong>Micro-ondas:</strong><br>
+            1. Retire a embalagem de papel.<br>
+            2. Aqueça de 5 a 6 minutos em potência máxima.<br>
+            3. Retire a tampa com cuidado.<br><br>
+            <strong>Banho-maria:</strong><br>
+            1. Coloque a marmita lacrada em água fervente por cerca de 10 minutos.<br>
+            2. Retire e sirva — simples e seguro!
+        </td>
+    </tr>
+    <tr>
+        <td class="categoria"><i>📦</i> Quero o plano mensal, mas não tenho espaço para armazenar tudo. O que faço?</td>
+        <td>Sem problema! Organizamos a entrega do plano mensal em <strong>remessas semanais</strong>, mantendo tudo
+            sempre fresco. Consulte as taxas e combinamos o melhor para você.
+        </td>
+    </tr>
+    </tbody>
+</table>
+<footer>
+    <p>💡 FAQ baseado em perguntas que podem surgir, enquanto você escolhe o seu plano! (referência 2025).</p>
+    <a href="marmitas.html" class="btn-voltar">← Voltar ao site</a>
+</footer>
+
+</body>
+</html>
