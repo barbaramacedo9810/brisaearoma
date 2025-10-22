@@ -15,12 +15,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 
     <link href="https://fonts.googleapis.com/css2?family=News+Cycle:wght@700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text&family=News+Cycle:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text&family=News+Cycle:wght@700&display=swap"
+          rel="stylesheet">
+
+    <!-- Ícone da setinha para baixo do Bootstrap -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-    <!-- Ícone da setinha para baixo do Google -->
-
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 
     <!-- CSS personalizado (sempre por último) -->
     <link rel="stylesheet" href="css/style.css">
@@ -58,6 +57,17 @@
             transform: translateY(-4px);
             transition: transform .2s ease;
         }
+
+        /* 🔽 Mantém a cor personalizada da setinha */
+        .arrow-icon {
+            color: #A78F7A; /* substitua pela cor que você usava anteriormente */
+            font-size: 1.8rem;
+            transition: transform 0.3s ease;
+        }
+
+        .card-clickable.active .arrow-icon {
+            transform: rotate(180deg);
+        }
     </style>
 </head>
 <body>
@@ -74,6 +84,7 @@
                 <li class="nav-item"><a class="nav-link active" href="index.html">Início</a></li>
                 <li class="nav-item"><a class="nav-link" href="cardapio.html">Cardápio</a></li>
                 <li class="nav-item"><a class="nav-link" href="chef.html">Chef</a></li>
+                <li class="nav-item"><a class="nav-link active" href="marmitas.html">Marmitas</a></li>
             </ul>
         </div>
     </div>
@@ -93,13 +104,7 @@
     <a href="#orcamento" class="btn btn-custom btn-lg px-4 py-2">
         Monte seu cardápio agora!
     </a>
-    </div>
-</section>
-
 </header>
-
-<!-- Importar Material Icons -->
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 <!-- Como Funciona -->
 <section class="container my-5 como-funciona">
@@ -113,9 +118,9 @@
                 <div class="d-flex flex-column align-items-center justify-content-center flex-grow-1">
                     <h5 class="fw-bold">Conte sua ideia</h5>
                     <p>Clique aqui e nos diga como você gostaria que fosse o seu evento.</p>
-                    <span class="material-icons arrow-icon">arrow_drop_down</span>
+                    <i class="bi bi-chevron-down arrow-icon"></i>
                 </div>
-                
+
                 <div id="ideaForm" class="reveal mt-3">
                     <label for="evento" class="form-label">Como você gostaria que fosse o seu evento?</label>
                     <textarea id="evento" class="form-control mb-3" rows="3"
@@ -131,8 +136,9 @@
                  onclick="toggleCard(event, 'chefSuggestions')">
                 <div class="d-flex flex-column align-items-center justify-content-center flex-grow-1">
                     <h5 class="fw-bold">Sugestões do Chef</h5>
-                    <p><strong>O chef propõe combinações criativas!</strong> Clique aqui e descubra combinações irresistíveis.</p>
-                    <span class="material-icons arrow-icon">arrow_drop_down</span>
+                    <p><strong>O chef propõe combinações criativas!</strong> Clique aqui e descubra combinações
+                        irresistíveis.</p>
+                    <i class="bi bi-chevron-down arrow-icon"></i>
                 </div>
                 <div id="chefSuggestions" class="reveal mt-3">
                     <h6>Algumas sugestões que fazem sucesso:</h6>
@@ -153,7 +159,7 @@
                 <div class="d-flex flex-column align-items-center justify-content-center flex-grow-1">
                     <h5 class="fw-bold">Definição do Menu</h5>
                     <p>Clique para ver como alinhamos o cardápio ideal.</p>
-                    <span class="material-icons arrow-icon">arrow_drop_down</span>
+                    <i class="bi bi-chevron-down arrow-icon"></i>
                 </div>
                 <div id="menuDetails" class="reveal mt-3">
                     <h6>Etapas para definir o menu:</h6>
@@ -173,7 +179,7 @@
                 <div class="d-flex flex-column align-items-center justify-content-center flex-grow-1">
                     <h5 class="fw-bold">Deguste sua criação</h5>
                     <p>Clique aqui e viva a experiência completa.</p>
-                    <span class="material-icons arrow-icon">arrow_drop_down</span>
+                    <i class="bi bi-chevron-down arrow-icon"></i>
                 </div>
                 <div id="tasteDetails" class="reveal mt-3">
                     <h6>O que você recebe:</h6>
@@ -193,13 +199,11 @@
 <script>
     function toggleCard(event, id) {
         event.stopPropagation();
-
-        // elemento .card-clickable que foi clicado (subir até encontrar)
         const card = event.currentTarget;
         const targetReveal = document.getElementById(id);
         if (!targetReveal) return;
 
-        // Fecha outros reveals e remove .active de outros cards
+        // Fecha outros reveals
         document.querySelectorAll('.card-clickable').forEach(c => {
             if (c !== card) {
                 c.classList.remove('active');
@@ -208,12 +212,11 @@
             }
         });
 
-        // Alterna o reveal e a classe active do card atual
+        // Alterna o card atual
         targetReveal.classList.toggle('open');
         card.classList.toggle('active');
     }
 
-    // Fecha tudo quando clicar fora dos cards
     document.addEventListener('click', function (e) {
         if (!e.target.closest('.card-clickable')) {
             document.querySelectorAll('.reveal').forEach(r => r.classList.remove('open'));
@@ -221,7 +224,6 @@
         }
     });
 
-    // Função sendToWhatsApp (mantive a sua)
     function sendToWhatsApp(event) {
         event.stopPropagation();
         const numero = "554196473945";
@@ -234,7 +236,6 @@
         window.open(url, "_blank");
     }
 </script>
-
 
 <!-- Diferenciais -->
 <section class="py-5">
@@ -288,37 +289,7 @@
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
     AOS.init({duration: 400, easing: 'ease-out', once: true, offset: 80, delay: 0});
-
-    function toggleCard(event, id) {
-        const targetReveal = document.getElementById(id);
-        if (!targetReveal) return;
-
-        document.querySelectorAll('.reveal').forEach(el => {
-            if (el === targetReveal) {
-                el.classList.toggle('open');
-            } else {
-                el.classList.remove('open');
-            }
-        });
-    }
-
-    function sendToWhatsApp(event) {
-        event.stopPropagation();
-        const numero = "554196473945";
-        const texto = document.getElementById("evento").value;
-        if (!texto) {
-            alert("Por favor, escreva sua ideia antes de enviar.");
-            return;
-        }
-        const url = `https://api.whatsapp.com/send?phone=${numero}&text=${encodeURIComponent("Minha ideia para o evento: " + texto)}`;
-        window.open(url, "_blank");
-    }
-
-    document.addEventListener('click', function (e) {
-        if (!e.target.closest('.card-clickable')) {
-            document.querySelectorAll('.reveal').forEach(r => r.classList.remove('open'));
-        }
-    });
 </script>
+
 </body>
 </html>
