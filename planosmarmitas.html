@@ -16,13 +16,19 @@
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=News+Cycle:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text&family=News+Cycle:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Ícone da setinha para baixo do Bootstrap -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <!-- CSS personalizado -->
+    <link rel="stylesheet" href="css/style.css">
+
     <style>
         :root {
             --cor-fundo: #F5F0E8;
-            --cor-principal: #BD836C; /* marrom/bege */
-            --cor-destaque: #E6D6C3; /* hover destaque */
+            --cor-principal: #BD836C;
+            --cor-destaque: #E6D6C3;
             --cor-texto: #333;
         }
 
@@ -30,10 +36,11 @@
             background-color: var(--cor-fundo);
         }
 
-        .hero-marmitas {
+        /* ======= Hero ======= */
+        .hero-planos {
             position: relative;
-            background: url('img/marmitas-hero.jpg') center/cover no-repeat;
-            min-height: 400px;
+            background: url('img/cardapio.jpg') center/cover no-repeat;
+            min-height: 80vh;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -41,21 +48,24 @@
             color: #fff;
         }
 
-        .hero-marmitas::before {
+        .hero-planos::before {
             content: "";
             position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: rgba(0,0,0,0.3);
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(54, 59, 64, 0.6);
             z-index: 1;
         }
 
-        .hero-marmitas .hero-content {
+        .hero-planos .hero-content {
             position: relative;
             z-index: 2;
             padding: 2rem;
         }
 
+        /* ======= Cards ======= */
         .section-title {
             text-align: center;
             color: var(--cor-principal);
@@ -110,7 +120,7 @@
             transform: rotate(90deg);
         }
 
-        /* Responsivo */
+        /* ======= Responsivo ======= */
         @media (max-width: 768px) {
             .col-md-3, .col-md-4 {
                 flex: 0 0 100%;
@@ -131,6 +141,32 @@
 
         .btn-voltar:hover {
             background: #a56d57;
+        }
+
+        /* ======= Navbar padrão Brisa & Aroma ======= */
+        nav.navbar.custom-navbar {
+            background: transparent !important;
+            border: none !important;
+            box-shadow: none !important;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        nav.navbar.custom-navbar .navbar-brand {
+            font-weight: 700;
+            color: var(--cor-logo, #fff) !important;
+            font-size: 1.4rem;
+            letter-spacing: 10px;
+            font-family: 'DM Serif Text', serif !important;
+        }
+
+        nav.navbar.custom-navbar .nav-link {
+            color: var(--cor-logo, #fff) !important;
+            font-weight: 600 !important;
+            margin-left: 5px;
+            font-family: 'DM Serif Text', serif !important;
         }
     </style>
 </head>
@@ -156,22 +192,20 @@
 </nav>
 
 <!-- Hero -->
-<header class="d-flex flex-column align-items-center text-center"
-        style="background: url('img/cardapio.jpg') no-repeat center center;
-               background-size: cover;
-               height: 500px;
-               color: #fff;
-               padding-top: 200px;">
-    <h1 class="display-5 fw-bold">🍱 Planos de Marmitas — Curitiba 2025</h1>
-    <p class="lead mb-4">
-        Escolha o estilo que combina com sua rotina e aproveite refeições saudáveis, saborosas e práticas!
-    </p>
-    <a href="#orcamento" class="btn btn-custom btn-lg px-4 py-2">
-        Peça já o seu combo e desfrute da praticidade!
-    </a>
+<section class="hero-planos">
+    <div class="hero-content">
+        <h1 class="display-5 fw-bold">🍱 Planos de Marmitas — Curitiba 2025</h1>
+        <p class="lead mb-4">
+            Escolha o estilo que combina com sua rotina e aproveite refeições saudáveis, saborosas e práticas!
+        </p>
+        <a href="#orcamento" class="btn btn-custom btn-lg px-4 py-2">
+            Peça já o seu combo e desfrute da praticidade!
+        </a>
     </div>
-    </section>
-</header>
+</section>
+
+</body>
+</html>
 
 <!-- Tipos de Marmitas -->
 <section class="container my-5">
