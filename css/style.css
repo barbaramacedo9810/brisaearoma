@@ -391,6 +391,33 @@ footer {
         font-size: 2rem !important;
     }
 }
+/* ======= FAQ interativo - card sobre maneiras de aquecer ======= */
+.card-faq.card-toggle {
+    cursor: pointer;
+}
+
+.card-faq .card-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.3s ease;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.card-faq.active .card-content {
+    max-height: 400px; /* altura suficiente para o texto expandir */
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.card-faq .arrow-icon {
+    float: right;
+    transition: transform 0.3s ease;
+}
+
+.card-faq.active .arrow-icon {
+    transform: rotate(180deg);
+}
 
 /* ===== Fundo padrão - Pág inicial ===== */
 body {
