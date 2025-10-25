@@ -160,6 +160,13 @@
         }
     </style>
 </head>
+<div id="chat-placeholder"></div>
+<script>
+    fetch('chat.html')
+        .then(res => res.text())
+        .then(data => document.getElementById('chat-placeholder').innerHTML = data);
+</script>
+
 <body>
 
 <!-- Navbar -->
@@ -182,18 +189,15 @@
     </div>
 </nav>
 
-<!-- Hero -->
-<section class="hero-planos">
-    <div class="hero-content">
-        <h1 class="display-5 fw-bold">💬 Perguntas Frequentes</h1>
-        <p class="lead mb-4">
-            Confira as principais dúvidas sobre pedidos, prazos, entregas e conservação das nossas marmitas.
-        </p>
-        <a href="https://wa.me/55SEUNUMERO" class="btn btn-custom btn-lg px-4 py-2">
-            Se tiver qualquer dúvida além do que está no FAQ, é só nos mandar uma mensagem pelo WhatsApp!
-        </a>
-    </div>
-</section>
+<header class="hero-header d-flex flex-column align-items-center text-center">
+    <h1 class="display-5 fw-bold">💬 Perguntas Frequentes</h1>
+    <p class="lead mb-4">
+        onfira as principais dúvidas sobre pedidos, prazos, entregas e conservação das nossas marmitas.
+    </p>
+    <a href="https://wa.me/55SEUNUMERO" class="btn btn-custom btn-lg px-4 py-2">
+        Se tiver qualquer dúvida além do que está no FAQ, é só nos mandar uma mensagem pelo WhatsApp!
+    </a>
+</header>
 
 <!-- FAQ -->
 <section class="container my-5">
