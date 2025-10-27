@@ -511,3 +511,17 @@ img {
 blockquote p {
     font-style: italic;
 }
+
+/* ===== chatbot ===== */
+
+#chat-button {
+    z-index: 9998;
+}
+
+#chat-box {
+    z-index: 9999;
+}
+#chat-close {
+    cursor: pointer;
+}
+
