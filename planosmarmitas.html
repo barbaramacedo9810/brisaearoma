@@ -307,5 +307,314 @@
     AOS.init({duration: 400, easing: 'ease-out', once: true, offset: 80, delay: 0});
 </script>
 
+<!-- === Chat Flutuante (colar antes do </body>) === -->
+<style>
+    /* Variáveis e estilos do chat (incluir localmente) */
+    :root{
+        --cor-escura:#363B40;
+        --cor-marrom:#BD836C;
+        --cor-verde:#76A694;
+        --cor-verde-escuro:#6FA66F;
+        --cor-bege:#F5E6D3;
+        --cor-branco:#FFFFFF;
+        --sombra-suave: rgba(0,0,0,0.15);
+    }
+
+    /* container fixo */
+    #chat-container {
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        z-index: 11000; /* container acima do resto da página */
+        font-family: 'Poppins', sans-serif;
+    }
+
+    /* botão redondo */
+    #chat-button {
+        background-color: var(--cor-verde);
+        color: var(--cor-branco);
+        width: 65px;
+        height: 65px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        font-size: 30px;
+        box-shadow: 0 5px 15px var(--sombra-suave);
+        transition: transform 0.18s, background-color 0.18s;
+        z-index: 11001; /* botão acima do container interno, mas abaixo da caixa quando aberta */
+    }
+
+    /* caixa do chat (inicialmente oculta) */
+    #chat-box {
+        display: none;
+        width: 360px;
+        max-width: 90vw;
+        background-color: var(--cor-bege);
+        border: 2px solid var(--cor-verde-escuro);
+        border-radius: 18px;
+        overflow: hidden;
+        box-shadow: 0 10px 25px var(--sombra-suave);
+        margin-bottom: 12px;
+        display: flex;
+        flex-direction: column;
+        animation: fadeIn 0.28s ease;
+        z-index: 11002; /* garantir que a caixa fique acima do botão e receba cliques */
+        pointer-events: auto;
+    }
+
+    /* header */
+    #chat-header {
+        background: var(--cor-verde-escuro);
+        color: var(--cor-branco);
+        padding: 12px 14px;
+        font-weight: 700;
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        font-size:15px;
+        border-bottom:1px solid var(--cor-verde);
+    }
+
+    /* mensagens */
+    #chat-messages {
+        padding: 12px;
+        font-size: 15px;
+        color: var(--cor-escura);
+        max-height: 280px;
+        overflow-y: auto;
+        display:flex;
+        flex-direction:column;
+        gap:10px;
+        background: transparent;
+    }
+
+    /* mensagens bolha */
+    .message {
+        max-width:75%;
+        padding:10px 14px;
+        border-radius:18px;
+        word-wrap:break-word;
+        box-shadow: 0 3px 8px var(--sombra-suave);
+        opacity: 0;
+        transform: translateY(8px);
+        animation: messageIn 0.28s forwards;
+    }
+
+    .message.bot {
+        background: var(--cor-verde);
+        color: var(--cor-branco);
+        align-self:flex-start;
+        border-bottom-left-radius:6px;
+    }
+
+    .message.user {
+        background: var(--cor-branco);
+        color: var(--cor-escura);
+        border:1px solid var(--cor-verde-escuro);
+        align-self:flex-end;
+        border-bottom-right-radius:6px;
+    }
+
+    /* opções/quick replies */
+    #chat-options {
+        display:flex;
+        flex-direction:column;
+        padding:10px;
+        gap:8px;
+        border-top:1px solid var(--cor-verde-escuro);
+        background: var(--cor-bege);
+    }
+
+    .chat-option {
+        padding:10px;
+        border-radius:12px;
+        border:none;
+        cursor:pointer;
+        background:var(--cor-verde);
+        color:var(--cor-branco);
+        font-size:14px;
+        box-shadow:0 3px 6px var(--sombra-suave);
+    }
+
+    .chat-option:hover { transform: translateY(-2px); }
+
+    /* animações */
+    @keyframes fadeIn { from{opacity:0; transform:translateY(10px)} to{opacity:1; transform:none} }
+    @keyframes messageIn { from{opacity:0; transform:translateY(8px)} to{opacity:1; transform:none} }
+
+    /* responsivo */
+    @media (max-width:480px){
+        #chat-box { width: 92vw; right:12px; left:12px; bottom:88px; }
+        #chat-messages { max-height: 220px; padding:8px; }
+    }
+</style>
+
+<!-- === Chat Flutuante === -->
+<div id="chat-container" aria-live="polite">
+    <div id="chat-box" role="dialog" aria-label="Chat Brisa e Aroma">
+        <div id="chat-header">
+            <span>🌿 Brisa & Aroma</span>
+            <button id="chat-close" aria-label="Fechar chat" style="background:none;border:none;color:#fff;font-size:16px;cursor:pointer">✖</button>
+        </div>
+
+        <div id="chat-messages">
+            <div class="message bot" style="animation-delay:0.05s">
+                Olá! Quer conhecer nossos planos, tipos de marmitas ou falar direto pelo WhatsApp? 🍱
+            </div>
+        </div>
+
+        <div id="chat-options">
+            <button class="chat-option" data-msg="Tipos de marmitas">Tipos de marmitas</button>
+            <button class="chat-option" data-msg="Planos e valores">Planos e valores</button>
+            <button class="chat-option" data-msg="WhatsApp">Falar no WhatsApp</button>
+        </div>
+    </div>
+
+    <button id="chat-button" aria-haspopup="dialog" aria-expanded="false">💬</button>
+</div>
+
+<script>
+    (function(){
+        const chatButton = document.getElementById('chat-button');
+        const chatBox = document.getElementById('chat-box');
+        const chatClose = document.getElementById('chat-close');
+        const chatOptions = Array.from(document.querySelectorAll('.chat-option'));
+        const chatMessages = document.getElementById('chat-messages');
+
+        function openChat(){
+            chatBox.style.display = 'flex';
+            chatButton.setAttribute('aria-expanded','true');
+            setTimeout(()=> chatMessages.scrollTop = chatMessages.scrollHeight, 60);
+        }
+
+        function closeChat(){
+            chatBox.style.display = 'none';
+            chatButton.setAttribute('aria-expanded','false');
+        }
+
+        chatButton.addEventListener('click', () => {
+            if (chatBox.style.display === 'flex') closeChat();
+            else openChat();
+        });
+
+        chatClose.addEventListener('click', closeChat);
+
+        document.addEventListener('click', (e) => {
+            const inside = e.composedPath().includes(chatBox) || e.composedPath().includes(chatButton);
+            if (!inside && chatBox.style.display === 'flex') closeChat();
+        });
+
+        function showBotMessage(text, speed=20){
+            const msgDiv = document.createElement('div');
+            msgDiv.className = 'message bot';
+            chatMessages.appendChild(msgDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+
+            let i = 0;
+            const interval = setInterval(() => {
+                msgDiv.textContent += text[i] ?? '';
+                i++;
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+                if (i >= text.length) clearInterval(interval);
+            }, speed);
+        }
+
+        function showUserMessage(text){
+            const msgDiv = document.createElement('div');
+            msgDiv.className = 'message user';
+            msgDiv.textContent = text;
+            chatMessages.appendChild(msgDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function resposta(opcao){
+            if (opcao === 'Tipos de marmitas') {
+                return 'Temos marmitas Fitness, Tradicional e Vegana 🌱. Quer saber mais detalhes?';
+            } else if (opcao === 'Planos e valores') {
+                return 'Nossos planos são semanais e mensais. Os valores variam com a quantidade — prefira nos chamar no WhatsApp para orçamento exato.';
+            } else {
+                return '';
+            }
+        }
+
+        function criarDropdownWhatsApp(){
+            const botMsg = document.createElement('div');
+            botMsg.className = 'message bot';
+            botMsg.textContent = 'Escolha uma mensagem ou digite a sua:';
+            chatMessages.appendChild(botMsg);
+
+            const container = document.createElement('div');
+            container.style.display = 'flex';
+            container.style.flexDirection = 'column';
+            container.style.gap = '6px';
+            container.style.padding = '8px';
+
+            // Dropdown
+            const select = document.createElement('select');
+            select.style.padding = '6px 8px';
+            select.style.borderRadius = '12px';
+            select.style.border = '1px solid #6FA66F';
+            select.innerHTML = `
+            <option value="">-- Selecione uma mensagem --</option>
+            <option value="Olá! Gostaria de saber mais sobre as marmitas.">Sobre as marmitas</option>
+            <option value="Quero informações sobre planos e valores.">Planos e valores</option>
+            <option value="Desejo receber o cardápio completo.">Receber cardápio</option>
+            <option value="Continuo com dúvidas sobre as marmitas, o FAQ me ajudou mas poderia me explicar melhor?">FAQ</option>
+        `;
+            container.appendChild(select);
+
+            // Input livre
+            const input = document.createElement('input');
+            input.type = 'text';
+            input.placeholder = 'Ou digite sua própria mensagem';
+            input.style.padding = '6px 8px';
+            input.style.borderRadius = '12px';
+            input.style.border = '1px solid #6FA66F';
+            container.appendChild(input);
+
+            // Botão abrir WhatsApp
+            const btn = document.createElement('button');
+            btn.textContent = 'Abrir WhatsApp';
+            btn.style.padding = '8px';
+            btn.style.border = 'none';
+            btn.style.borderRadius = '12px';
+            btn.style.backgroundColor = '#25D366';
+            btn.style.color = '#fff';
+            btn.style.cursor = 'pointer';
+            btn.style.fontWeight = '600';
+            container.appendChild(btn);
+
+            btn.addEventListener('click', () => {
+                let msg = input.value || select.value || '';
+                const numero = '554196473945';
+                const linkWhats = msg ?
+                    `https://api.whatsapp.com/send?phone=${numero}&text=${encodeURIComponent(msg)}` :
+                    `https://api.whatsapp.com/send?phone=${numero}`;
+                window.open(linkWhats, '_blank');
+                chatMessages.removeChild(container);
+            });
+
+            chatMessages.appendChild(container);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        chatOptions.forEach(button => {
+            button.addEventListener('click', () => {
+                const userText = button.dataset.msg;
+                showUserMessage(userText);
+
+                if (userText === 'WhatsApp') {
+                    criarDropdownWhatsApp();
+                } else {
+                    setTimeout(() => showBotMessage(resposta(userText)), 300);
+                }
+            });
+        });
+    })();
+</script>
+<!-- === FIM Chat Flutuante === -->
+
 </body>
 </html>
