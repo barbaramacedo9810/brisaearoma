@@ -207,12 +207,12 @@
 
 <!-- Tipos de Marmitas -->
 <section class="container my-5">
-    <h2 class="section-title">Tipos de Marmitas</h2>
+    <h2 class="section-title text-center mb-5" data-aos="fade-up">Tipos de Marmitas</h2>
     <div class="row g-4">
 
         <!-- Tradicional -->
         <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-            <div class="card-marmita" onclick="toggleCard(this)">
+            <div class="card-marmita" onclick="toggleCard(this)" onmouseenter="openCard(this)" onmouseleave="closeCard(this)">
                 <h5 class="card-title">Tradicional</h5>
                 <p class="card-text">Conforto e sabor de comida caseira, sem restrições específicas.</p>
                 <div class="card-preco">R$ 16,90</div>
@@ -228,41 +228,30 @@
                             <li><strong>Marmita 5:</strong> Arroz, feijão e carne de panela</li>
                         </ul>
                     </div>
-                </div>
-
-                <div class="planos">
-                    <div class="plano">
+                    <div class="plano mt-3">
                         <h6 class="plano-titulo">Plano 2 - 10 Marmitas</h6>
                         <ul class="lista-marmitas">
-                            <li><strong>Marmita 1:</strong> Arroz, feijão, batata e carne</li>
-                            <li><strong>Marmita 2:</strong> Arroz, legumes e frango grelhado</li>
-                            <li><strong>Marmita 3:</strong> Macarrão, feijão e carne moída</li>
-                            <li><strong>Marmita 4:</strong> Purê, arroz e frango desfiado</li>
-                            <li><strong>Marmita 5:</strong> Arroz, feijão e carne de panela</li>
+                            <li>Mesmas combinações com variações semanais.</li>
                         </ul>
                     </div>
-                </div>
-
-                <div class="planos">
-                    <div class="plano">
+                    <div class="plano mt-3">
                         <h6 class="plano-titulo">Plano 3 - 20 Marmitas</h6>
                         <ul class="lista-marmitas">
-                            <li><strong>Marmita 1:</strong> Arroz, feijão, batata e carne</li>
-                            <li><strong>Marmita 2:</strong> Arroz, legumes e frango grelhado</li>
-                            <li><strong>Marmita 3:</strong> Macarrão, feijão e carne moída</li>
-                            <li><strong>Marmita 4:</strong> Purê, arroz e frango desfiado</li>
-                            <li><strong>Marmita 5:</strong> Arroz, feijão e carne de panela</li>
+                            <li>Ideal para o mês inteiro, com cardápios rotativos.</li>
                         </ul>
                     </div>
                 </div>
 
+                <button class="ver-mais" onclick="toggleVerMais(this, event)">
+                    <span class="icone">+</span> Ver mais
+                </button>
                 <i class="bi bi-chevron-right arrow-icon"></i>
             </div>
         </div>
 
         <!-- Fitness -->
         <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-            <div class="card-marmita" onclick="toggleCard(this)">
+            <div class="card-marmita" onclick="toggleCard(this)" onmouseenter="openCard(this)" onmouseleave="closeCard(this)">
                 <h5 class="card-title">Fitness</h5>
                 <p class="card-text">Leve e nutritiva, ajuda a manter energia e bem-estar.</p>
                 <div class="card-preco">R$ 18,90</div>
@@ -271,48 +260,37 @@
                     <div class="plano">
                         <h6 class="plano-titulo">Plano 1 - 5 Marmitas</h6>
                         <ul class="lista-marmitas">
-                            <li><strong>Marmita 1:</strong> Arroz integral, frango grelhado e legumes</li>
-                            <li><strong>Marmita 2:</strong> Purê de batata-doce, frango e brócolis</li>
-                            <li><strong>Marmita 3:</strong> Macarrão integral com atum</li>
-                            <li><strong>Marmita 4:</strong> Arroz integral, carne magra e salada</li>
-                            <li><strong>Marmita 5:</strong> Omelete, batata e legumes</li>
+                            <li>Arroz integral, frango grelhado e legumes</li>
+                            <li>Purê de batata-doce, frango e brócolis</li>
+                            <li>Macarrão integral com atum</li>
+                            <li>Arroz integral, carne magra e salada</li>
+                            <li>Omelete, batata e legumes</li>
                         </ul>
                     </div>
-                </div>
-
-                <div class="planos">
-                    <div class="plano">
+                    <div class="plano mt-3">
                         <h6 class="plano-titulo">Plano 2 - 10 Marmitas</h6>
                         <ul class="lista-marmitas">
-                            <li><strong>Marmita 1:</strong> Arroz integral, frango grelhado e legumes</li>
-                            <li><strong>Marmita 2:</strong> Purê de batata-doce, frango e brócolis</li>
-                            <li><strong>Marmita 3:</strong> Macarrão integral com atum</li>
-                            <li><strong>Marmita 4:</strong> Arroz integral, carne magra e salada</li>
-                            <li><strong>Marmita 5:</strong> Omelete, batata e legumes</li>
+                            <li>Combinações semanais com foco em baixo teor de gordura.</li>
                         </ul>
                     </div>
-                </div>
-
-                <div class="planos">
-                    <div class="plano">
+                    <div class="plano mt-3">
                         <h6 class="plano-titulo">Plano 3 - 20 Marmitas</h6>
                         <ul class="lista-marmitas">
-                            <li><strong>Marmita 1:</strong> Arroz integral, frango grelhado e legumes</li>
-                            <li><strong>Marmita 2:</strong> Purê de batata-doce, frango e brócolis</li>
-                            <li><strong>Marmita 3:</strong> Macarrão integral com atum</li>
-                            <li><strong>Marmita 4:</strong> Arroz integral, carne magra e salada</li>
-                            <li><strong>Marmita 5:</strong> Omelete, batata e legumes</li>
+                            <li>Cardápio mensal com variação de proteínas magras e vegetais.</li>
                         </ul>
                     </div>
                 </div>
 
+                <button class="ver-mais" onclick="toggleVerMais(this, event)">
+                    <span class="icone">+</span> Ver mais
+                </button>
                 <i class="bi bi-chevron-right arrow-icon"></i>
             </div>
         </div>
 
         <!-- Vegetariana -->
         <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-            <div class="card-marmita" onclick="toggleCard(this)">
+            <div class="card-marmita" onclick="toggleCard(this)" onmouseenter="openCard(this)" onmouseleave="closeCard(this)">
                 <h5 class="card-title">Vegetariana</h5>
                 <p class="card-text">Opção sem carne, rica em legumes e proteínas vegetais.</p>
                 <div class="card-preco">R$ 15,90</div>
@@ -321,48 +299,25 @@
                     <div class="plano">
                         <h6 class="plano-titulo">Plano 1 - 5 Marmitas</h6>
                         <ul class="lista-marmitas">
-                            <li><strong>Marmita 1:</strong> Arroz, feijão e legumes grelhados</li>
-                            <li><strong>Marmita 2:</strong> Purê de batata, lentilha e salada</li>
-                            <li><strong>Marmita 3:</strong> Macarrão com molho de tomate e proteína de soja</li>
-                            <li><strong>Marmita 4:</strong> Arroz integral, grão-de-bico e legumes</li>
-                            <li><strong>Marmita 5:</strong> Feijão preto, arroz e omelete vegetariano</li>
+                            <li>Arroz, feijão e legumes grelhados</li>
+                            <li>Purê de batata, lentilha e salada</li>
+                            <li>Macarrão com molho de tomate e proteína de soja</li>
+                            <li>Arroz integral, grão-de-bico e legumes</li>
+                            <li>Feijão preto, arroz e omelete vegetariano</li>
                         </ul>
                     </div>
                 </div>
 
-                <div class="planos">
-                    <div class="plano">
-                        <h6 class="plano-titulo">Plano 2 - 10 Marmitas</h6>
-                        <ul class="lista-marmitas">
-                            <li><strong>Marmita 1:</strong> Arroz, feijão e legumes grelhados</li>
-                            <li><strong>Marmita 2:</strong> Purê de batata, lentilha e salada</li>
-                            <li><strong>Marmita 3:</strong> Macarrão com molho de tomate e proteína de soja</li>
-                            <li><strong>Marmita 4:</strong> Arroz integral, grão-de-bico e legumes</li>
-                            <li><strong>Marmita 5:</strong> Feijão preto, arroz e omelete vegetariano</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="planos">
-                    <div class="plano">
-                        <h6 class="plano-titulo">Plano 3 - 20 Marmitas</h6>
-                        <ul class="lista-marmitas">
-                            <li><strong>Marmita 1:</strong> Arroz, feijão e legumes grelhados</li>
-                            <li><strong>Marmita 2:</strong> Purê de batata, lentilha e salada</li>
-                            <li><strong>Marmita 3:</strong> Macarrão com molho de tomate e proteína de soja</li>
-                            <li><strong>Marmita 4:</strong> Arroz integral, grão-de-bico e legumes</li>
-                            <li><strong>Marmita 5:</strong> Feijão preto, arroz e omelete vegetariano</li>
-                        </ul>
-                    </div>
-                </div>
-
+                <button class="ver-mais" onclick="toggleVerMais(this, event)">
+                    <span class="icone">+</span> Ver mais
+                </button>
                 <i class="bi bi-chevron-right arrow-icon"></i>
             </div>
         </div>
 
         <!-- Vegana Premium -->
         <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
-            <div class="card-marmita" onclick="toggleCard(this)">
+            <div class="card-marmita" onclick="toggleCard(this)" onmouseenter="openCard(this)" onmouseleave="closeCard(this)">
                 <h5 class="card-title">Vegana Premium</h5>
                 <p class="card-text">Alimentação consciente com ingredientes selecionados.</p>
                 <div class="card-preco">R$ 19,90</div>
@@ -371,48 +326,25 @@
                     <div class="plano">
                         <h6 class="plano-titulo">Plano 1 - 5 Marmitas</h6>
                         <ul class="lista-marmitas">
-                            <li><strong>Marmita 1:</strong> Arroz integral, feijão e tofu grelhado</li>
-                            <li><strong>Marmita 2:</strong> Quinoa, legumes e grão-de-bico</li>
-                            <li><strong>Marmita 3:</strong> Purê de batata e proteína vegetal</li>
-                            <li><strong>Marmita 4:</strong> Macarrão integral e lentilhas</li>
-                            <li><strong>Marmita 5:</strong> Arroz, ervilha e mix de legumes</li>
+                            <li>Arroz integral, feijão e tofu grelhado</li>
+                            <li>Quinoa, legumes e grão-de-bico</li>
+                            <li>Purê de batata e proteína vegetal</li>
+                            <li>Macarrão integral e lentilhas</li>
+                            <li>Arroz, ervilha e mix de legumes</li>
                         </ul>
                     </div>
                 </div>
 
-                <div class="planos">
-                    <div class="plano">
-                        <h6 class="plano-titulo">Plano 2 - 10 Marmitas</h6>
-                        <ul class="lista-marmitas">
-                            <li><strong>Marmita 1:</strong> Arroz integral, feijão e tofu grelhado</li>
-                            <li><strong>Marmita 2:</strong> Quinoa, legumes e grão-de-bico</li>
-                            <li><strong>Marmita 3:</strong> Purê de batata e proteína vegetal</li>
-                            <li><strong>Marmita 4:</strong> Macarrão integral e lentilhas</li>
-                            <li><strong>Marmita 5:</strong> Arroz, ervilha e mix de legumes</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="planos">
-                    <div class="plano">
-                        <h6 class="plano-titulo">Plano 3 - 20 Marmitas</h6>
-                        <ul class="lista-marmitas">
-                            <li><strong>Marmita 1:</strong> Arroz integral, feijão e tofu grelhado</li>
-                            <li><strong>Marmita 2:</strong> Quinoa, legumes e grão-de-bico</li>
-                            <li><strong>Marmita 3:</strong> Purê de batata e proteína vegetal</li>
-                            <li><strong>Marmita 4:</strong> Macarrão integral e lentilhas</li>
-                            <li><strong>Marmita 5:</strong> Arroz, ervilha e mix de legumes</li>
-                        </ul>
-                    </div>
-                </div>
-
+                <button class="ver-mais" onclick="toggleVerMais(this, event)">
+                    <span class="icone">+</span> Ver mais
+                </button>
                 <i class="bi bi-chevron-right arrow-icon"></i>
             </div>
         </div>
 
         <!-- Low Carb -->
         <div class="col-md-4" data-aos="fade-up" data-aos-delay="500">
-            <div class="card-marmita" onclick="toggleCard(this)">
+            <div class="card-marmita" onclick="toggleCard(this)" onmouseenter="openCard(this)" onmouseleave="closeCard(this)">
                 <h5 class="card-title">Low Carb</h5>
                 <p class="card-text">Controla carboidratos, saciando sem culpa.</p>
                 <div class="card-preco">R$ 17,90</div>
@@ -421,48 +353,25 @@
                     <div class="plano">
                         <h6 class="plano-titulo">Plano 1 - 5 Marmitas</h6>
                         <ul class="lista-marmitas">
-                            <li><strong>Marmita 1:</strong> Frango grelhado com legumes</li>
-                            <li><strong>Marmita 2:</strong> Carne moída com couve-flor</li>
-                            <li><strong>Marmita 3:</strong> Omelete e legumes refogados</li>
-                            <li><strong>Marmita 4:</strong> Peixe grelhado e brócolis</li>
-                            <li><strong>Marmita 5:</strong> Frango desfiado com abobrinha</li>
+                            <li>Frango grelhado com legumes</li>
+                            <li>Carne moída com couve-flor</li>
+                            <li>Omelete e legumes refogados</li>
+                            <li>Peixe grelhado e brócolis</li>
+                            <li>Frango desfiado com abobrinha</li>
                         </ul>
                     </div>
                 </div>
 
-                <div class="planos">
-                    <div class="plano">
-                        <h6 class="plano-titulo">Plano 2 - 10 Marmitas</h6>
-                        <ul class="lista-marmitas">
-                            <li><strong>Marmita 1:</strong> Frango grelhado com legumes</li>
-                            <li><strong>Marmita 2:</strong> Carne moída com couve-flor</li>
-                            <li><strong>Marmita 3:</strong> Omelete e legumes refogados</li>
-                            <li><strong>Marmita 4:</strong> Peixe grelhado e brócolis</li>
-                            <li><strong>Marmita 5:</strong> Frango desfiado com abobrinha</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="planos">
-                    <div class="plano">
-                        <h6 class="plano-titulo">Plano 3 - 20 Marmitas</h6>
-                        <ul class="lista-marmitas">
-                            <li><strong>Marmita 1:</strong> Frango grelhado com legumes</li>
-                            <li><strong>Marmita 2:</strong> Carne moída com couve-flor</li>
-                            <li><strong>Marmita 3:</strong> Omelete e legumes refogados</li>
-                            <li><strong>Marmita 4:</strong> Peixe grelhado e brócolis</li>
-                            <li><strong>Marmita 5:</strong> Frango desfiado com abobrinha</li>
-                        </ul>
-                    </div>
-                </div>
-
+                <button class="ver-mais" onclick="toggleVerMais(this, event)">
+                    <span class="icone">+</span> Ver mais
+                </button>
                 <i class="bi bi-chevron-right arrow-icon"></i>
             </div>
         </div>
 
         <!-- Proteica -->
         <div class="col-md-4" data-aos="fade-up" data-aos-delay="600">
-            <div class="card-marmita" onclick="toggleCard(this)">
+            <div class="card-marmita" onclick="toggleCard(this)" onmouseenter="openCard(this)" onmouseleave="closeCard(this)">
                 <h5 class="card-title">Proteica</h5>
                 <p class="card-text">Mais proteínas para treinos e recuperação.</p>
                 <div class="card-preco">R$ 19,50</div>
@@ -471,44 +380,22 @@
                     <div class="plano">
                         <h6 class="plano-titulo">Plano 1 - 5 Marmitas</h6>
                         <ul class="lista-marmitas">
-                            <li><strong>Marmita 1:</strong> Arroz, feijão e peito de frango</li>
-                            <li><strong>Marmita 2:</strong> Arroz integral, carne e legumes</li>
-                            <li><strong>Marmita 3:</strong> Purê e carne desfiada</li>
-                            <li><strong>Marmita 4:</strong> Frango grelhado e batata</li>
-                            <li><strong>Marmita 5:</strong> Arroz, feijão e carne moída magra</li>
+                            <li>Arroz, feijão e peito de frango</li>
+                            <li>Arroz integral, carne e legumes</li>
+                            <li>Purê e carne desfiada</li>
+                            <li>Frango grelhado e batata</li>
+                            <li>Arroz, feijão e carne moída magra</li>
                         </ul>
                     </div>
                 </div>
 
-                <div class="planos">
-                    <div class="plano">
-                        <h6 class="plano-titulo">Plano 2 - 10 Marmitas</h6>
-                        <ul class="lista-marmitas">
-                            <li><strong>Marmita 1:</strong> Arroz, feijão e peito de frango</li>
-                            <li><strong>Marmita 2:</strong> Arroz integral, carne e legumes</li>
-                            <li><strong>Marmita 3:</strong> Purê e carne desfiada</li>
-                            <li><strong>Marmita 4:</strong> Frango grelhado e batata</li>
-                            <li><strong>Marmita 5:</strong> Arroz, feijão e carne moída magra</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="planos">
-                    <div class="plano">
-                        <h6 class="plano-titulo">Plano 3 - 20 Marmitas</h6>
-                        <ul class="lista-marmitas">
-                            <li><strong>Marmita 1:</strong> Arroz, feijão e peito de frango</li>
-                            <li><strong>Marmita 2:</strong> Arroz integral, carne e legumes</li>
-                            <li><strong>Marmita 3:</strong> Purê e carne desfiada</li>
-                            <li><strong>Marmita 4:</strong> Frango grelhado e batata</li>
-                            <li><strong>Marmita 5:</strong> Arroz, feijão e carne moída magra</li>
-                        </ul>
-                    </div>
-                </div>
-
+                <button class="ver-mais" onclick="toggleVerMais(this, event)">
+                    <span class="icone">+</span> Ver mais
+                </button>
                 <i class="bi bi-chevron-right arrow-icon"></i>
             </div>
         </div>
+
     </div>
 </section>
 
@@ -529,13 +416,12 @@
         transform: translateY(-5px);
     }
 
-    /* Estado ativo (quando clicado) */
     .card-marmita.active {
         background: #fff7ef;
         transform: translateY(-5px);
+        box-shadow: 0 6px 16px rgba(0,0,0,0.15);
     }
 
-    /* Conteúdo oculto */
     .planos {
         max-height: 0;
         opacity: 0;
@@ -543,22 +429,38 @@
         transition: all 0.4s ease;
     }
 
-    /* Mostrar ao hover */
-    .card-marmita:hover .planos {
-        max-height: 800px;
-        opacity: 1;
-    }
-
-    /* Mostrar ao clicar */
     .card-marmita.active .planos {
         max-height: 800px;
         opacity: 1;
         margin-top: 10px;
     }
 
+    .ver-mais {
+        background: none;
+        border: none;
+        color: #b7794f;
+        font-weight: 600;
+        cursor: pointer;
+        padding: 0;
+        margin-top: 10px;
+        font-size: 0.95rem;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .ver-mais:hover {
+        text-decoration: underline;
+    }
+
+    .ver-mais .icone {
+        font-size: 1.2rem;
+        line-height: 0;
+    }
+
     .plano-titulo {
         font-weight: 600;
-        color: #ff7b00;
+        color: #b7794f;
         margin-bottom: 8px;
     }
 
@@ -571,8 +473,21 @@
 
     .lista-marmitas li {
         margin-bottom: 4px;
-        border-left: 3px solid #ff7b00;
+        border-left: 3px solid #b7794f;
         padding-left: 8px;
+    }
+
+    .arrow-icon {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        font-size: 1.2rem;
+        color: #b7794f;
+        transition: transform 0.3s ease;
+    }
+
+    .card-marmita.active .arrow-icon {
+        transform: rotate(90deg);
     }
 </style>
 
@@ -581,7 +496,41 @@
     function toggleCard(card) {
         card.classList.toggle('active');
     }
+
+    function openCard(card) {
+        card.classList.add('hovered');
+        card.classList.add('active');
+    }
+
+    function closeCard(card) {
+        card.classList.remove('hovered');
+        if (!card.classList.contains('clicked')) {
+            card.classList.remove('active');
+        }
+    }
+
+    function toggleVerMais(botao, event) {
+        event.stopPropagation();
+        const card = botao.closest('.card-marmita');
+        const planos = card.querySelector('.planos');
+        const icone = botao.querySelector('.icone');
+
+        if (planos.style.maxHeight && planos.style.maxHeight !== '0px') {
+            planos.style.maxHeight = '0';
+            planos.style.opacity = '0';
+            icone.textContent = '+';
+            botao.textContent = ' Ver mais';
+            botao.prepend(icone);
+        } else {
+            planos.style.maxHeight = '800px';
+            planos.style.opacity = '1';
+            icone.textContent = '–';
+            botao.textContent = ' Ver menos';
+            botao.prepend(icone);
+        }
+    }
 </script>
+
 
 <!-- Planos -->
 <section class="container my-5">
