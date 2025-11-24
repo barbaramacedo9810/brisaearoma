@@ -192,30 +192,34 @@
     </div>
 </nav>
 
-<header class="hero-header d-flex flex-column align-items-center text-center">
-    <h1 class="display-5 fw-bold">🍱 Planos de Marmitas — Curitiba 2025</h1>
-    <p class="lead mb-4">
-        Escolha o estilo que combina com sua rotina e aproveite refeições saudáveis, saborosas e práticas!
-    </p>
-    <a href="#orcamento" class="btn btn-custom btn-lg px-4 py-2">
-        Peça já o seu combo e desfrute da praticidade!
-    </a>
-</header>
-
-</body>
-</html>
+<!-- HERO -->
+<section class="hero-section">
+    <div class="hero-logo">
+        <img src="img/logo.png" alt="Logo Raízes de Vó">
+    </div>
+    <a href="#orcamento" class="btn btn-custom btn-lg px-4 py-2">Peça já o seu combo e desfrute da praticidade!</a>
+</section>
 
 <!-- Tipos de Marmitas -->
-<section class="container my-5">
-    <h2 class="section-title text-center mb-5" data-aos="fade-up">Tipos de Marmitas</h2>
-    <div class="row g-4">
+<section class="container my-5 planos-section">
+    <h2 class="section-title text-center mb-5" data-aos="fade-up">🍱 Planos de Marmitas — Curitiba 2025</h2>
+    <p class="lead mb-4 text-center">Escolha o estilo que combina com sua rotina e aproveite refeições saudáveis, saborosas e práticas!</p>
+
+
+    <div class="row g-4 align-items-stretch">
+
+
+        <!-- ===== CARD TEMPLATE (mantive todos os textos) ===== -->
+        <!-- Cada card tem altura igual e animações suaves -->
+
 
         <!-- TRADICIONAL -->
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-            <div class="card-marmita">
+        <div class="col-md-4 d-flex" data-aos="fade-up" data-aos-delay="100">
+            <div class="card-marmita flex-fill">
                 <h5 class="card-title">Tradicional</h5>
                 <p class="card-text">Conforto e sabor de comida caseira, sem restrições específicas.</p>
                 <div class="card-preco">R$ 16,90</div>
+
 
                 <div class="planos">
                     <div class="plano">
@@ -230,6 +234,7 @@
                     </div>
                 </div>
 
+
                 <button class="ver-mais" onclick="toggleVerMais(this, event)">
                     <span class="icone">+</span>
                     <span class="texto">Ver mais</span>
@@ -238,12 +243,14 @@
             </div>
         </div>
 
+
         <!-- FITNESS -->
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-            <div class="card-marmita">
+        <div class="col-md-4 d-flex" data-aos="fade-up" data-aos-delay="200">
+            <div class="card-marmita flex-fill">
                 <h5 class="card-title">Fitness</h5>
                 <p class="card-text">Leve e nutritiva, ideal para quem busca energia e equilíbrio.</p>
                 <div class="card-preco">R$ 18,90</div>
+
 
                 <div class="planos">
                     <div class="plano">
@@ -258,6 +265,7 @@
                     </div>
                 </div>
 
+
                 <button class="ver-mais" onclick="toggleVerMais(this, event)">
                     <span class="icone">+</span>
                     <span class="texto">Ver mais</span>
@@ -266,12 +274,14 @@
             </div>
         </div>
 
+
         <!-- VEGETARIANA -->
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-            <div class="card-marmita">
+        <div class="col-md-4 d-flex" data-aos="fade-up" data-aos-delay="300">
+            <div class="card-marmita flex-fill">
                 <h5 class="card-title">Vegetariana</h5>
                 <p class="card-text">Opção sem carne, rica em legumes e proteínas vegetais.</p>
                 <div class="card-preco">R$ 15,90</div>
+
 
                 <div class="planos">
                     <div class="plano">
@@ -286,6 +296,7 @@
                     </div>
                 </div>
 
+
                 <button class="ver-mais" onclick="toggleVerMais(this, event)">
                     <span class="icone">+</span>
                     <span class="texto">Ver mais</span>
@@ -294,12 +305,14 @@
             </div>
         </div>
 
+
         <!-- VEGANA PREMIUM -->
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
-            <div class="card-marmita">
+        <div class="col-md-4 d-flex" data-aos="fade-up" data-aos-delay="400">
+            <div class="card-marmita flex-fill">
                 <h5 class="card-title">Vegana Premium</h5>
                 <p class="card-text">Alimentação consciente com ingredientes selecionados.</p>
                 <div class="card-preco">R$ 19,90</div>
+
 
                 <div class="planos">
                     <div class="plano">
@@ -314,6 +327,7 @@
                     </div>
                 </div>
 
+
                 <button class="ver-mais" onclick="toggleVerMais(this, event)">
                     <span class="icone">+</span>
                     <span class="texto">Ver mais</span>
@@ -322,65 +336,70 @@
             </div>
         </div>
 
-        <!-- LOW CARB -->
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="500">
-            <div class="card-marmita">
-                <h5 class="card-title">Low Carb</h5>
-                <p class="card-text">Controla carboidratos, saciando sem culpa.</p>
-                <div class="card-preco">R$ 17,90</div>
+                <!-- LOW CARB -->
+                <div class="col-md-4 d-flex" data-aos="fade-up" data-aos-delay="500">
+                    <div class="card-marmita flex-fill">
+                        <h5 class="card-title">Low Carb</h5>
+                        <p class="card-text">Controla carboidratos, saciando sem culpa.</p>
+                        <div class="card-preco">R$ 17,90</div>
 
-                <div class="planos">
-                    <div class="plano">
-                        <h6 class="plano-titulo">Plano 1 - 5 Marmitas</h6>
-                        <ul class="lista-marmitas">
-                            <li>Frango grelhado com legumes</li>
-                            <li>Carne moída com couve-flor</li>
-                            <li>Omelete e legumes refogados</li>
-                            <li>Peixe grelhado e brócolis</li>
-                            <li>Frango desfiado com abobrinha</li>
-                        </ul>
+
+                        <div class="planos">
+                            <div class="plano">
+                                <h6 class="plano-titulo">Plano 1 - 5 Marmitas</h6>
+                                <ul class="lista-marmitas">
+                                    <li>Frango grelhado com legumes</li>
+                                    <li>Carne moída com couve-flor</li>
+                                    <li>Omelete e legumes refogados</li>
+                                    <li>Peixe grelhado e brócolis</li>
+                                    <li>Frango desfiado com abobrinha</li>
+                                </ul>
+                            </div>
+                        </div>
+
+
+                        <button class="ver-mais" onclick="toggleVerMais(this, event)">
+                            <span class="icone">+</span>
+                            <span class="texto">Ver mais</span>
+                            <i class="bi bi-chevron-down seta"></i>
+                        </button>
                     </div>
                 </div>
 
-                <button class="ver-mais" onclick="toggleVerMais(this, event)">
-                    <span class="icone">+</span>
-                    <span class="texto">Ver mais</span>
-                    <i class="bi bi-chevron-down seta"></i>
-                </button>
-            </div>
-        </div>
 
-        <!-- PROTEICA -->
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="600">
-            <div class="card-marmita">
-                <h5 class="card-title">Proteica</h5>
-                <p class="card-text">Mais proteínas para treinos e recuperação muscular.</p>
-                <div class="card-preco">R$ 19,50</div>
+                <!-- PROTEICA -->
+                <div class="col-md-4 d-flex" data-aos="fade-up" data-aos-delay="600">
+                    <div class="card-marmita flex-fill">
+                        <h5 class="card-title">Proteica</h5>
+                        <p class="card-text">Mais proteínas para treinos e recuperação muscular.</p>
+                        <div class="card-preco">R$ 19,50</div>
 
-                <div class="planos">
-                    <div class="plano">
-                        <h6 class="plano-titulo">Plano 1 - 5 Marmitas</h6>
-                        <ul class="lista-marmitas">
-                            <li>Arroz, feijão e peito de frango</li>
-                            <li>Arroz integral, carne e legumes</li>
-                            <li>Purê e carne desfiada</li>
-                            <li>Frango grelhado e batata</li>
-                            <li>Arroz, feijão e carne moída magra</li>
-                        </ul>
+
+                        <div class="planos">
+                            <div class="plano">
+                                <h6 class="plano-titulo">Plano 1 - 5 Marmitas</h6>
+                                <ul class="lista-marmitas">
+                                    <li>Arroz, feijão e peito de frango</li>
+                                    <li>Arroz integral, carne e legumes</li>
+                                    <li>Purê e carne desfiada</li>
+                                    <li>Frango grelhado e batata</li>
+                                    <li>Arroz, feijão e carne moída magra</li>
+                                </ul>
+                            </div>
+                        </div>
+
+
+                        <button class="ver-mais" onclick="toggleVerMais(this, event)">
+                            <span class="icone">+</span>
+                            <span class="texto">Ver mais</span>
+                            <i class="bi bi-chevron-down seta"></i>
+                        </button>
                     </div>
                 </div>
 
-                <button class="ver-mais" onclick="toggleVerMais(this, event)">
-                    <span class="icone">+</span>
-                    <span class="texto">Ver mais</span>
-                    <i class="bi bi-chevron-down seta"></i>
-                </button>
-            </div>
-        </div>
 
-    </div>
+            </div>
 </section>
-
 <!-- ESTILO -->
 <style>
     .card-marmita {

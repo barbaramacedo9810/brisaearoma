@@ -17,115 +17,117 @@
 }
 
 
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+/* ======= Imports de fontes ======= */
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anybody:ital,wght@1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=News+Cycle&display=swap');
 
 /* ======= Reset ======= */
-* {
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    font-family: 'DM Serif Text', serif !important;
-    background-color: var(--cor-fundo) !important;
+/* ======= PADRÃO: corpo e background (opcional) ======= */
+body{
+    background-color: var(--cor-fundo);
     color: var(--cor-texto);
-    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-/* ======= Navbar ======= */
-nav.navbar.custom-navbar {
-    background: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
+/* ===================== LOGO PADRONIZADA =====================
+   Use <div class="logo-text">Raízes de vó</div> em vez de <h1> para evitar sobreposição de regras
+   Ajuste somente --logo-size (ou font-size abaixo) se quiser maior/menor */
+.logo-text{
+    font-family: 'Righteous', cursive;
+    font-size: 3rem;              /* ajuste conforme necessidade */
+    color: var(--cor-logo);
+    display: inline-block;
+    text-align: center;
+    letter-spacing: 2px;
+    margin: 0;
+    line-height: 1;
+    /* sombra extrudada */
+    text-shadow:
+            1px 1px 0 var(--cor-marrom),
+            2px 2px 0 var(--cor-marrom),
+            5px 5px 0 var(--cor-dourado),
+            6px 6px 0 var(--cor-marrom),
+            7px 7px 0 var(--cor-verde-escuro),
+            6px 6px 6px rgba(0,0,0,0.25);
+    filter: drop-shadow(0 0 4px rgba(255,235,200,0.6));
+}
+
+/* Pequena utilitária para controlar o tamanho globalmente sem tocar na regra acima */
+:root { --logo-size: 4rem; }
+.logo-text{ font-size: var(--logo-size); }
+
+/* ===================== NAVBAR ===================== */
+nav.navbar.custom-navbar{
+    background: transparent;
+    border: none;
+    box-shadow: none;
     position: absolute;
     top: 0;
     width: 100%;
     z-index: 1000;
 }
-
-nav.navbar.custom-navbar .navbar-brand {
+nav.navbar.custom-navbar .navbar-brand{
+    color: var(--cor-logo);
+    font-family: 'DM Serif Text', serif;
     font-weight: 700;
-    color: var(--cor-logo) !important; /* Rosa Chá */
     font-size: 1.4rem;
-    letter-spacing: 10px; /* Estava em 3 - aumenta ou diminui o espaçamento do brisa e aroma */
-    font-family: 'DM Serif Text', serif !important;
+    letter-spacing: 10px;
 }
-
-nav.navbar.custom-navbar .nav-link {
-    color: var(--cor-logo) !important; /* Garante que todos os links fiquem da mesma cor do logo */
-    font-weight: 600 !important;
-    margin-left: 5px;
-    font-family: 'DM Serif Text', serif !important;
+nav.navbar.custom-navbar .nav-link{
+    color: var(--cor-logo);
+    font-family: 'DM Serif Text', serif;
+    font-weight: 600;
 }
-
-/* Remove qualquer mudança de cor no hover */
 nav.navbar.custom-navbar .nav-link:hover,
-nav.navbar.custom-navbar .nav-link.active {
-    color: var(--cor-logo) !important;
+nav.navbar.custom-navbar .nav-link.active{
+    color: var(--cor-logo);
 }
 
-/* ======= Cabeçalho ======= */
-header {
+/* ===================== CABEÇALHO / HEADER ===================== */
+header{
     background-color: var(--cor-verde);
-    color: var(--cor-texto);
     padding: 40px 20px;
     text-align: center;
     border-bottom: 10px solid var(--cor-marrom);
+    color: var(--cor-texto);
 }
-
-header h1 {
-    font-weight: 700;
+header h1{
     color: var(--cor-dourado);
-    font-family: 'DM Serif Text', serif !important;
+    font-family: 'DM Serif Text', serif;
+    font-weight: 700;
 }
 
-/* ======= Fonte para títulos principais ======= */
-.titulos-anybody,
-h1, h2, h3, h4, h5, h6,
-.display-1, .display-2, .display-3, .display-4, .display-5, .display-6,
-.lead, .titulo-historia {
-    font-family: 'Anybody', cursive !important;
-    font-weight: 400 !important;
-    font-style: italic !important;
-}
-
-/* ======= Estilo exclusivo do logo “Brisa & Aroma” ======= */
-@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap'); /* Fonte retrô/groovy encorpada */
-
-.logo-text {
-    font-family: 'Righteous', cursive !important;
-    font-size: 100px !important;
-    color: #EAD7D1; /* Rosa Chá */
-    text-align: center;
-    letter-spacing: 1px;
-    position: relative;
-    display: inline-block;
-    margin: 0;
-
-    /* Efeito extrudado / 3D com múltiplas camadas de sombra */
-    text-shadow: 1px 1px 0 #BD836C, /* sombra marrom rosado leve */ 2px 2px 0 #BD836C,
-    5px 5px 0 #D9A577, /* dourado mais intenso na profundidade média */ 6px 6px 0 #BD836C; /* marrom rosado */ 7px 7px 0 #6FA66F; /* verde médio encorpado */ 6px 6px 6px rgba(0, 0, 0, 0.25); /* sombra final suave realista */
-
-    /* Brilho aconchegante */
-    filter: drop-shadow(0 0 4px rgba(255, 235, 200, 0.6));
-
-    /* Pequeno efeito de brilho sutil */
-}
-
-
-/* ======= Aparência padronizada para títulos de seção ======= */
-.titulo-historia {
-    font-weight: 700 !important;
-    font-size: 2rem !important;
-    color: var(--titulo-color) !important;
+/* ===================== TIPOGRAFIA DE TÍTULOS ===================== */
+.titulo-historia,
+.titulo-secao,
+h1,h2,h3,h4,h5,h6,
+.display-1, .display-2, .display-3, .display-4 {
+    font-family: 'Anybody', cursive;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--titulo-color);
     letter-spacing: 0.5px;
-    margin-bottom: 2rem;
-    font-style: italic !important;
+}
+.titulo-historia,
+.titulo-secao,
+section h2{
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 4rem;
+    margin-bottom: 2.5rem;
 }
 
-/* ======= Botões ======= */
-.btn-custom {
+/* ===================== BOTÕES ===================== */
+.btn-custom{
     background-color: var(--cor-dourado);
     color: #fff;
     padding: 10px 20px;
@@ -133,395 +135,165 @@ h1, h2, h3, h4, h5, h6,
     border: none;
     font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    text-decoration: none;
-    text-align: center;
+    transition: transform 0.2s ease, background-color 0.3s ease;
 }
+.btn-custom:hover{ transform: scale(1.05); }
 
-.btn-custom:hover {
-    transform: scale(1.05);
-}
-
-.btn-primary {
+.btn-primary{
     background-color: var(--cor-marrom);
-    border: none;
     color: #fff;
-    font-weight: 600;
     padding: 0.6rem 1.2rem;
     border-radius: 8px;
-    transition: background-color 0.3s ease;
+    border: none;
+    font-weight: 600;
 }
+.btn-primary:hover{ background-color: var(--cor-dourado); }
 
-.btn-primary:hover {
-    background-color: var(--cor-dourado);
-}
+/* ===================== SEÇÕES GENERICAS ===================== */
+section{ padding: 3rem 0; }
+.text-center h2{ color: var(--cor-texto); font-weight: 700; }
 
-/* ======= Seções ======= */
-section {
-    padding-top: 3rem !important;
-    padding-bottom: 3rem !important;
-}
-
-.text-center h2 {
-    color: var(--cor-texto);
-    font-weight: 700;
-}
-
-/* ===================== TITULAÇÕES UNIFICADAS ===================== */
-h2, h3, h4, h5, h6,
-.titulo-historia {
-    font-family: 'Anybody', cursive !important;
-    font-weight: 400 !important;
-    font-style: italic !important;
-    color: #000 !important;
-    text-transform: none !important;
-    letter-spacing: 0.5px !important;
-}
-
-.titulo-secao,
-.titulo-historia,
-section h2 {
-    font-size: 2rem !important;
-    text-align: center !important;
-    margin-top: 4rem !important;
-    margin-bottom: 2.5rem !important;
-}
-
-/* ======= Cards gerais ======= */
-.card, .card .card-body {
+/* ===================== CARDS (PRESERVADOS) ===================== */
+.card, .card .card-body{
     font-family: 'News Cycle', sans-serif;
     font-size: 1.2rem;
     border: 2px solid var(--cor-dourado);
-    background-color: var(--cor-cards) !important;
+    background-color: var(--cor-cards);
     border-radius: 15px;
     padding: 1.5rem;
     transition: transform 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
     color: var(--cor-texto);
 }
-
-.card:hover {
+.card:hover{
     transform: translateY(-4px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
 }
-
-.card h4 {
-    font-family: 'DM Serif Text', serif !important;
+.card h4{
+    font-family: 'DM Serif Text', serif;
     font-weight: 600;
     color: var(--titulo-color);
     margin-bottom: 1rem;
 }
+.card p{ font-size: 1.05rem; color: var(--cor-texto); }
+.card a{ text-decoration: none; color: inherit; }
 
-.card p {
-    font-size: 1.05rem;
-    color: var(--cor-texto);
-}
-
-.card a {
-    text-decoration: none;
-}
-
-/* ======= Text-box ======= */
-.text-box {
+/* ===================== TEXT-BOX ===================== */
+.text-box{
     font-family: 'News Cycle', sans-serif;
     font-size: 1.1rem;
     padding: 20px 25px;
-    background: rgba(230, 213, 195, 0.4);
+    background: rgba(230,213,195,0.4);
     border-radius: 15px;
     border: 2px solid var(--cor-dourado);
-    box-sizing: border-box;
-    color: var(--cor-texto);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     text-align: center;
-    height: 100%;
 }
 
-.text-box h5 {
-    font-family: 'DM Serif Text', serif !important;
-    font-weight: 600 !important;
-    color: #000 !important;
-}
+/* ===================== IMAGENS ===================== */
+img.rounded{ border-radius: 12px; }
+img.shadow{ box-shadow: 0 3px 3px rgba(0,0,0,0.1); }
+img{ border-radius: 30px; }
 
-/* ======= Imagens ======= */
-img.rounded {
-    border-radius: 12px !important;
-}
-
-img.shadow {
-    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* ======= Blockquote ======= */
-blockquote {
+/* ===================== HERO CARDÁPIO ===================== */
+.hero-cardapio{
     font-family: 'News Cycle', sans-serif;
-    font-size: 1.2rem;
-    border-left: 4px solid var(--cor-fundo);
-    padding-left: 1rem;
-    color: var(--cor-dourado);
-}
-
-/* ======= Hero Cardápio ======= */
-.hero-cardapio {
-    font-family: 'News Cycle', sans-serif !important;
-    font-size: 1rem;
     position: relative;
     width: 100%;
     height: 550px;
     overflow: hidden;
     border: 4px solid var(--cor-dourado);
     border-radius: 14px;
-    text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
-
-.hero-cardapio .hero-img {
-    position: absolute !important;
-    top: 0;
-    left: 0;
+.hero-cardapio .hero-img{
+    position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
     z-index: 0;
     opacity: 0.5;
 }
-
-.hero-cardapio::before {
+.hero-cardapio::before{
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0,0,0,0.3);
     z-index: 1;
 }
+.hero-cardapio .hero-content{ position: relative; z-index: 2; color: #fff; }
 
-.hero-cardapio .hero-content {
-    position: relative;
-    z-index: 2;
-    color: #fff;
-    padding: 20px;
-    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.7);
-}
-
-/* ===================== COMO FUNCIONA ===================== */
-.como-funciona,
-.como-funciona * {
-    font-family: 'News Cycle', sans-serif !important;
-}
-
-#chefSuggestions h6,
-#menuDetails h6,
-#tasteDetails h6 {
-    font-family: 'DM Serif Text', serif !important;
-}
-
-.como-funciona strong {
-    font-weight: 700;
-    font-family: 'News Cycle', sans-serif !important;
-}
-
-/* ===================== Seção Nossos Serviços ===================== */
-section:nth-of-type(3) {
-    padding-top: 4rem !important;
-    padding-bottom: 4rem !important;
-}
-
-section:nth-of-type(3) h2 {
-    margin-bottom: 3rem !important;
-    font-size: 2rem !important;
-    color: var(--titulo-color) !important;
-    font-family: 'DM Serif Text', serif !important;
-}
-
-/* Cards da seção serviços */
-section:nth-of-type(3) .card {
-    background-color: var(--cor-cards) !important;
-    border: 2px solid var(--cor-dourado) !important;
-    border-radius: 15px;
-    font-family: 'News Cycle', sans-serif !important;
-    color: var(--cor-texto) !important;
-    padding: 1.5rem;
-    transition: transform 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
-}
-
-section:nth-of-type(3) .card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
-}
-
-section:nth-of-type(3) .card h4 {
-    font-family: 'DM Serif Text', serif !important;
-    font-weight: 600;
-    color: var(--titulo-color) !important;
-    margin-bottom: 1rem;
-}
-
-section:nth-of-type(3) .card p {
-    font-family: 'News Cycle', sans-serif !important;
-    color: var(--cor-texto) !important;
-    font-size: 1.05rem;
-}
-
-section:nth-of-type(3) .card a {
-    color: inherit !important;
-    text-decoration: none !important;
-}
-
-/* ======= Rodapé ======= */
-footer {
-    background-color: var(--cor-escura);
-    color: #fff;
-    padding: 20px 0;
-    font-size: 13px;
+/* ===================== HERO CENTRAL (logo + botão) ===================== */
+.hero-section {
+    display: flex;
+    flex-direction: column; /* deixa logo e botão um embaixo do outro */
+    justify-content: center;
+    align-items: center;    /* centraliza horizontalmente */
     text-align: center;
+    margin-top: 50px;       /* ajuste conforme quiser */
 }
 
-/* ======= Responsividade ======= */
-@media (max-width: 768px) {
-    h1 {
-        font-size: 1.8rem !important;
-    }
-
-    h2 {
-        font-size: 1.5rem !important;
-    }
-
-    .titulo-historia {
-        font-size: 2rem !important;
-    }
-}
-/* ======= FAQ interativo - card sobre maneiras de aquecer ======= */
-.card-faq.card-toggle {
-    cursor: pointer;
+.hero-section .hero-logo img {
+    width: 1100px;
+    max-width: 90%;         /* responsivo */
+    height: auto;
+    margin-bottom: 20px;    /* espaço entre logo e botão */
 }
 
-.card-faq .card-content {
+/* ===================== FAQ interativo ===================== */
+.card-faq.card-toggle{ cursor: pointer; }
+.card-faq .card-content{
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.4s ease, padding 0.3s ease;
     padding-top: 0;
     padding-bottom: 0;
 }
-
-.card-faq.active .card-content {
-    max-height: 400px; /* altura suficiente para o texto expandir */
+.card-faq.active .card-content{
+    max-height: 400px;
     padding-top: 10px;
     padding-bottom: 10px;
 }
+.card-faq .arrow-icon{ float: right; transition: transform 0.3s ease; }
+.card-faq.active .arrow-icon{ transform: rotate(180deg); }
 
-.card-faq .arrow-icon {
-    float: right;
-    transition: transform 0.3s ease;
+/* ===================== RODAPÉ ===================== */
+footer{
+    background-color: var(--cor-escura);
+    color: #FAF3E6;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 0.85rem;
 }
 
-.card-faq.active .arrow-icon {
-    transform: rotate(180deg);
+/* Logo pequena na navbar */
+.navbar-brand img {
+    max-height: 55px !important;
+    width: auto !important;
 }
 
-/* ===== Fundo padrão - Pág inicial ===== */
-body {
-    background-color: #FAF3E6 !important;
-    font-family: 'News Cycle', sans-serif;
-    color: #363B40;
-}
-
-/* ===== Títulos gerais com DM Serif Text ===== */
-h1, h2, h3, h4 {
-    font-family: 'DM Serif Text', serif !important;
-    color: #363B40;
-}
-
-/* Navbar */
-.custom-navbar .nav-link {
-    color: #363B40 !important;
-    font-weight: 700;
-}
-
-.custom-navbar .nav-link.active {
-    text-decoration: underline;
-}
-
-/* Cards Nossos Serviços */
-.card {
-    background-color: #FAF3E6 !important;
-    border: 2px solid #BD836C !important;
-    border-radius: 15px;
-    padding: 15px;
-}
-
-.card .card-body h4 {
-    font-family: 'DM Serif Text', serif !important;
-    color: #363B40 !important;
+/* Logo grande no centro da página */
+.hero-logo {
+    text-align: center;
+    margin-top: 0px;
     margin-bottom: 10px;
 }
 
-.card .card-body p {
-    font-family: 'News Cycle', sans-serif !important;
-    color: #363B40 !important;
-    margin-bottom: 0;
+.hero-logo img {
+    width: 1100px;     /* tamanho ideal */
+    height: auto;
 }
 
-/* Link dentro dos cards */
-.card a {
-    text-decoration: none !important;
-    color: inherit !important;
-}
+/* ===================== Chatbot z-index ===================== */
+#chat-button{ z-index: 9998; }
+#chat-box{ z-index: 9999; }
+#chat-close{ cursor: pointer; }
 
-/* Botão personalizado */
-.btn-custom {
-    background-color: #BD836C !important;
-    color: #fff !important;
-    font-weight: 900;
-    border-radius: 20px;
+/* ===================== RESPONSIVIDADE ===================== */
+@media (max-width: 768px){
+    :root { --logo-size: 3rem; } /* reduz o logo via variável */
+    h1{ font-size: 1.8rem; }
+    h2{ font-size: 1.5rem; }
 }
-
-/* Rodapé */
-footer {
-    background-color: #363B40 !important;
-    color: #FAF3E6 !important;
-}
-
-/* Pequenos ajustes nos títulos das seções */
-.titulo-historia {
-    font-family: 'DM Serif Text', serif !important;
-    color: #363B40 !important;
-}
-
-/* Hero header */
-.hero-header {
-    background: url('../img/cardapio.jpg') no-repeat center center;
-    background-size: cover;
-    height: 500px;
-    color: #fff;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-/* Imagens */
-img {
-    border-radius: 10px;
-}
-
-/* Blockquote styling */
-blockquote p {
-    font-style: italic;
-}
-
-/* ===== chatbot ===== */
-
-#chat-button {
-    z-index: 9998;
-}
-
-#chat-box {
-    z-index: 9999;
-}
-#chat-close {
-    cursor: pointer;
-}
-
